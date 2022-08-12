@@ -1,32 +1,62 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app id="inspire">
+    <v-navigation-drawer 
+      v-model="drawer"
+      app
+    >
+      <v-list-item>
+        <v-list-item-content>
+          <v-list-item-title class="text-h6">
+            <img alt="Foundry logo icon" src="./assets/logo-full.png" style="width: 80%"/>
+          </v-list-item-title>
+          
+        </v-list-item-content>
+      </v-list-item>
+
+      <v-divider></v-divider>
+
+      <v-list
+        dense
+        nav
+      >
+        <v-list-item
+          v-for="item in items"
+          :key="item.title"
+          :to="item.to"
+          link
+        >
+          <v-list-item-icon>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content>
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+
+    <v-app-bar app>
+      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+
+      <!-- <v-toolbar-title> <img alt="Foundry logo icon" src="./assets/logo-icon.png" style="width: 40px"/></v-toolbar-title> -->
+    </v-app-bar>
+
+    <v-main>
+      <router-view></router-view>
+    </v-main>
+  </v-app>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+<script>
+  export default {
+    data: () => ({ drawer: null,
+    items: [
+          { title: 'Home', icon: 'mdi-home', to:'/' },
+          { title: 'Search Datasets', icon: 'mdi-magnify', to:'/search-datasets' },
+          { title: 'About', icon: 'mdi-help-box', to:'/about' },
+          { title: 'Documentation', icon: 'mdi-file-document-multiple-outline'},
+          { title: 'Examples', icon: 'mdi-rocket-launch' }
+        ] }),
   }
-}
-</style>
+</script>
