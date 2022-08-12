@@ -30,10 +30,10 @@
                                 </v-list-item>
                             </v-list-group>
                         </v-list>
-                        <div class="col-12">
+                        <!-- <div class="col-12">
                             <v-btn color="indigo lighten-3" elevation="2" dark class="col-12">
                                 search</v-btn>
-                        </div>
+                        </div> -->
                     </v-card>
                 </v-col>
                 <v-col>
@@ -41,7 +41,28 @@
                         <v-card elevation="3" height="200px" outlined class="mx-auto col-md-5 col-12 my-6"
                             v-for="item in items" :key="item.title" :to="item.to" link>
                             <v-card-title>{{ item.title }}</v-card-title>
-                            <v-card-text>description</v-card-text>
+                            <v-card-text>
+                                <v-chip 
+                                    class="ma-2"
+                                    color="primary"
+                                >
+                                    {{item.foundry.data_type}}
+                                </v-chip>
+                                <v-chip 
+                                    class="ma-2"
+                                    color="secondary"
+                                >
+                                    {{item.foundry.n_items}}
+                                </v-chip>
+                                <v-chip
+                                    class="ma-2"
+                                    color="green"
+                                    text-color="white"
+                                    >
+                                    {{item.foundry.task_type}}
+                                </v-chip>
+
+                            </v-card-text>
                         </v-card>
                     </v-row>
                 </v-col>
@@ -53,18 +74,40 @@
 
 <!-- This is where the dataset data will be loaded and put into the cards -->
 <script>
+import axios from 'axios';
+
 export default {
+    mounted () {
+    var self = this;
+
+    // Define the search endpoint and index
+    var ep = 'https://search.api.globus.org/v1/index/1a57bbe5-5272-477f-9d31-343b8258b7a5/search'
+
+    // Format the POST query for Globus search
+    var query = {
+        "q": "(mdf.organizations:Foundry) AND (mdf.resource_type:dataset)",
+        "limit": 10,
+        "advanced":true
+    }
+    
+    // Perform the POST request, and load the information into the Vue object
+    axios
+      .post(ep, query)
+      .then(function (res) { 
+        console.log(res)
+        for (let i = 0; i < res.data.gmeta.length; i++) { 
+            // TODO, add more data into the view object for display
+            self.items.push({
+                                title : res.data.gmeta[i].entries[0].content.dc.titles[0].title,
+                                foundry : res.data.gmeta[i].entries[0].content.projects.foundry,
+                                to:"/search-datasets/dataset"})
+        }
+        console.log(self.items) 
+        } )
+    },
     data: () => ({
         drawer: null,
-        items: [
-            { title: 'Dataset 1', to: '/search-datasets/dataset' },
-            { title: 'Dataset 2', to: '/search-datasets/dataset' },
-            { title: 'Dataset 3', to: '/search-datasets/dataset' },
-            { title: 'Dataset 4', to: '/search-datasets/dataset' },
-            { title: 'Dataset 5', to: '/search-datasets/dataset' },
-            { title: 'Dataset 6', to: '/search-datasets/dataset' },
-
-        ],
+        items: [],
         searchTerms: [
             {
                 icon: 'mdi-beaker-outline',
