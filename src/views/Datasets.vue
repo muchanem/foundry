@@ -1,5 +1,5 @@
 <template>
-    <div class="search-datasets">
+    <div class="datasets">
         <v-container>
             <v-row>
                 <h1 class="mx-6 mt-6">Dataset Search</h1>
@@ -90,7 +90,7 @@ export default {
                     self.items.push({
                         title: res.data.gmeta[i].entries[0].content.dc.titles[0].title,
                         foundry: res.data.gmeta[i].entries[0].content.projects.foundry,
-                        to: "/search-datasets/dataset"
+                        to: "/datasets/"+res.data.gmeta[i].entries[0].content.mdf.source_id
                     })
                 }
                 console.log(self.items)
