@@ -74,31 +74,59 @@ export default {
         var ep = 'https://search.api.globus.org/v1/index/1a57bbe5-5272-477f-9d31-343b8258b7a5/search'
 
         // Format the POST query for Globus search
+        // Facet
         var query = {
             "q": "(mdf.organizations:Foundry) AND (mdf.resource_type:dataset)",
-            "limit": 10,
-            "advanced": true
+            "limit": 100,
+            "advanced": true,
+            "facets": [
+                {
+                "name": "tags",
+                "field_name": "dc.subjects.subject",
+                "type": "terms", //"date_histogram",
+                "size":20
+                }
+            ]
         }
 
         // Perform the POST request, and load the information into the Vue object
         axios
             .post(ep, query)
             .then(function (res) {
+                console.log("AXIOS POST")
                 console.log(res)
                 for (let i = 0; i < res.data.gmeta.length; i++) {
                     // TODO, add more data into the view object for display
                     self.items.push({
                         title: res.data.gmeta[i].entries[0].content.dc.titles[0].title,
                         foundry: res.data.gmeta[i].entries[0].content.projects.foundry,
-                        to: "/datasets/"+res.data.gmeta[i].entries[0].content.mdf.source_id
+                        to: "/datasets/" + res.data.gmeta[i].entries[0].content.mdf.source_id
                     })
                 }
-                console.log(self.items)
+
+                // Loop through the facet results from Globus Search, and put them 
+                // into the facets object
+                for (let j = 0; j < res.data.facet_results[0].buckets.length; j++) {
+                    self.facets.tags.push({
+                        "title": res.data.facet_results[0].buckets[j].value,
+                        "count": res.data.facet_results[0].buckets[j].count
+                    })
+                }
+
+                // Push facet results into the searchTerms for display purposes
+                  self.searchTerms.push( {
+                    "icon": 'mdi-beaker-outline',
+                    "subterms": self.facets.tags,
+                    "title": 'Tag',
+                  })
+
+            
             })
     },
     data: () => ({
         drawer: null,
         items: [],
+        facets: {"tags":[]},
         searchTerms: [
             {
                 icon: 'mdi-beaker-outline',
