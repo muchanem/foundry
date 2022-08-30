@@ -3,7 +3,10 @@
         <v-card>
             <div class="indigo lighten-4 pa-6">
                 <h1 class="">{{dataset.title}}</h1>
-                <p class="subtitle-1">Authors</p>
+                <p class="subtitle-1">
+                    <span v-for="(author, index) in dataset.authors" :key="author">
+                        {{author}}<span v-if="index != dataset.authors.length - 1">; </span>
+                    </span></p>
             </div>
             <v-tabs color="deep-purple accent-4" right>
                 <v-tab>Overview</v-tab>
@@ -20,11 +23,11 @@
                     <v-row>
                         <div class="col-6 px-0">
                             <h3><i class="mdi mdi-beaker-outline red--text text--lighten-3"></i> Scientific Domain:</h3>
-                            <p>Bonbon pudding gummies marzipan bear claw pie</p>
+                            <p>{{dataset.foundry.domain}}</p>
                         </div>
                         <div class="col-6 px-0">
                             <h3><i class="mdi mdi-run red--text text--lighten-3"></i> Associated Tasks:</h3>
-                            <p>Gummi bears candy marzipan cheesecake.</p>
+                            <p>{{dataset.foundry.task_type}}</p>
                         </div>
                     </v-row>
                     <v-row>
@@ -40,7 +43,7 @@
                     <v-row>
                         <div class="col-6 px-0">
                             <h3><i class="mdi mdi-weight-kilogram red--text text--lighten-3"></i> Size:</h3>
-                            <p>Measurement, n-items</p>
+                            <p>{{dataset.foundry.n_items}}</p>
                         </div>
                         <div class="col-6 px-0">
 
@@ -185,30 +188,35 @@ export default {
         // Define the search endpoint and index
         var ep = 'https://search.api.globus.org/v1/index/1a57bbe5-5272-477f-9d31-343b8258b7a5/search'
 
-        // Format the POST query for Globus search
-        // Facet
+        // Format the POST query for Globus search - search via mdf.source_id
         var query = {
             "q": "(mdf.source_id:"+this.$route.params.id+") AND (mdf.resource_type:dataset)",
-            "limit": 100,
+            "limit": 1,
             "advanced": true,
         }
-
-        console.log(query.q)
 
         // Perform the POST request, and load the information into the Vue object
         axios
             .post(ep, query)
             .then(function (res) {
-                console.log("AXIOS POST")
                 console.log(res)
-                for (let i = 0; i < res.data.gmeta.length; i++) {
-                    // TODO, add more data into the view object for display
-                    self.dataset = {
-                        title: res.data.gmeta[i].entries[0].content.dc.titles[0].title,
-                        foundry: res.data.gmeta[i].entries[0].content.projects.foundry,
-                        to: "/datasets/" + res.data.gmeta[i].entries[0].content.mdf.source_id
-                    }
+
+                var creators = res.data.gmeta[0].entries[0].content.dc.creators
+                var authors = []
+
+                for (let i = 0; i < creators.length; i++) {
+                    authors.push(creators[i].creatorName)
                 }
+
+                // TODO, add more data into the view object for display
+                self.dataset = {
+                    title: res.data.gmeta[0].entries[0].content.dc.titles[0].title,
+                    authors: authors,
+                    dc: res.data.gmeta[0].entries[0].content.dc,
+                    foundry: res.data.gmeta[0].entries[0].content.projects.foundry,
+                    to: "/datasets/" + res.data.gmeta[0].entries[0].content.mdf.source_id
+                }
+                console.log(self.dataset)
             })
     },
     data: () => ({
