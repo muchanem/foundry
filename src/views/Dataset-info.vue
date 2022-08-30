@@ -2,7 +2,7 @@
     <v-container>
         <v-card>
             <div class="indigo lighten-4 pa-6">
-                <h1 class="">Dataset Name</h1>
+                <h1 class="">{{dataset.title}}</h1>
                 <p class="subtitle-1">Authors</p>
             </div>
             <v-tabs color="deep-purple accent-4" right>
@@ -167,13 +167,65 @@ import "vue-code-highlight/themes/prism-tomorrow.css";
 import "vue-code-highlight/themes/window.css";
 import 'prism-es6/components/prism-markup-templating';
 import 'prism-es6/components/prism-python';
+import { useRoute } from 'vue-router'
 
+
+import axios from 'axios';
 
 export default {
-    name: 'Dataset-info',
     components: {
         VueCodeHighlight
-    }
+    },
+    mounted() {
+        var self = this;
+
+
+        console.log(this.$route)
+
+        // Define the search endpoint and index
+        var ep = 'https://search.api.globus.org/v1/index/1a57bbe5-5272-477f-9d31-343b8258b7a5/search'
+
+        // Format the POST query for Globus search
+        // Facet
+        var query = {
+            "q": "(mdf.source_id:"+this.$route.params.id+") AND (mdf.resource_type:dataset)",
+            "limit": 100,
+            "advanced": true,
+        }
+
+        console.log(query.q)
+
+        // Perform the POST request, and load the information into the Vue object
+        axios
+            .post(ep, query)
+            .then(function (res) {
+                console.log("AXIOS POST")
+                console.log(res)
+                for (let i = 0; i < res.data.gmeta.length; i++) {
+                    // TODO, add more data into the view object for display
+                    self.dataset = {
+                        title: res.data.gmeta[i].entries[0].content.dc.titles[0].title,
+                        foundry: res.data.gmeta[i].entries[0].content.projects.foundry,
+                        to: "/datasets/" + res.data.gmeta[i].entries[0].content.mdf.source_id
+                    }
+                }
+            })
+    },
+    data: () => ({
+        drawer: null,
+        dataset: {},
+        facets: {"tags":[]},
+    }),
 }
+
+
+
+
+// export default {
+//     name: 'Dataset-info',
+//     components: {
+//         VueCodeHighlight
+//     }
+// }
 </script>
 
