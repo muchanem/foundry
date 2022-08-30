@@ -12,7 +12,6 @@
           
         </v-list-item-content>
       </v-list-item>
-
       <v-divider></v-divider>
 
       <v-list
@@ -53,7 +52,7 @@
     data: () => ({ drawer: null,
     items: [
           { title: 'Home', icon: 'mdi-home', to:'/' },
-          { title: 'Search Datasets', icon: 'mdi-magnify', to:'/search-datasets' },
+          { title: 'Datasets', icon: 'mdi-magnify', to:'/datasets' },
           { title: 'About', icon: 'mdi-help-box', to:'/about' },
           { title: 'Documentation', icon: 'mdi-file-document-multiple-outline'},
           { title: 'Examples', icon: 'mdi-rocket-launch' }

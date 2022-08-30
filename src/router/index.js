@@ -19,15 +19,15 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
-    path: '/search-datasets',
-    name: 'Search Datasets',
+    path: '/datasets',
+    name: 'Datasets',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "Search-datasets" */ '../views/Search-datasets.vue')
+    component: () => import(/* webpackChunkName: "Search-datasets" */ '../views/Datasets.vue')
   },
   {
-    path: '/search-datasets/dataset',
+    path: '/datasets/:id',
     name: 'Datasets Info',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
