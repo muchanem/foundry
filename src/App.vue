@@ -1,45 +1,20 @@
 <template>
   <v-app id="inspire">
-    <v-navigation-drawer 
-      v-model="drawer"
-      app
-    >
-      <v-list-item>
-        <v-list-item-content>
-          <v-list-item-title class="text-h6">
-            <img alt="Foundry logo icon" src="./assets/logo-full.png" style="width: 80%"/>
-          </v-list-item-title>
-          
-        </v-list-item-content>
-      </v-list-item>
-      <v-divider></v-divider>
 
-      <v-list
-        dense
-        nav
-      >
-        <v-list-item
-          v-for="item in items"
-          :key="item.title"
-          :to="item.to"
-          link
-        >
-          <v-list-item-icon>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-icon>
+    <v-toolbar class="flex-grow-0">
+      <a href="/">
+        <v-toolbar-title><img alt="Foundry logo icon" src="./assets/logo-full.png" style="width: 25%" />
+        </v-toolbar-title>
+      </a>
 
-          <v-list-item-content>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
+      <v-spacer></v-spacer>
 
-    <v-app-bar app>
-      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-
-      <!-- <v-toolbar-title> <img alt="Foundry logo icon" src="./assets/logo-icon.png" style="width: 40px"/></v-toolbar-title> -->
-    </v-app-bar>
+      <v-toolbar-items v-for="item in items" :key="item.title" :to="item.to" link>
+        <a :href="item.to" class="text-decoration-none deep-purple--text darken-1">
+          <v-toolbar-title class="mx-4 mt-4 text-body-1">{{ item.title }}</v-toolbar-title>
+        </a>
+      </v-toolbar-items>
+    </v-toolbar>
 
     <v-main>
       <router-view></router-view>
@@ -48,14 +23,16 @@
 </template>
 
 <script>
-  export default {
-    data: () => ({ drawer: null,
+export default {
+  data: () => ({
+    drawer: null,
     items: [
-          { title: 'Home', icon: 'mdi-home', to:'/' },
-          { title: 'Datasets', icon: 'mdi-magnify', to:'/datasets' },
-          { title: 'About', icon: 'mdi-help-box', to:'/about' },
-          { title: 'Documentation', icon: 'mdi-file-document-multiple-outline'},
-          { title: 'Examples', icon: 'mdi-rocket-launch' }
-        ] }),
-  }
+      { title: 'Home', icon: 'mdi-home', to: '/' },
+      { title: 'Datasets', icon: 'mdi-magnify', to: '#/datasets' },
+      { title: 'About', icon: 'mdi-help-box', to: '#/about' },
+      { title: 'Documentation', icon: 'mdi-file-document-multiple-outline', to: 'https://ai-materials-and-chemistry.gitbook.io/foundry/v/docs/' },
+      { title: 'Examples', icon: 'mdi-rocket-launch', to: `https://github.com/MLMI2-CSSI/foundry/tree/main/examples` }
+    ]
+  }),
+}
 </script>
