@@ -39,13 +39,13 @@
                             v-for="item in items" :key="item.title" :to="item.to" link>
                             <v-card-title style="word-break: keep-all;">{{ item.title }}</v-card-title>
                             <v-card-text>
-                                <v-chip class="ma-2" color="blue lighten-1">
+                                <v-chip class="ma-2" color="blue lighten-1" text-color="white">
                                     {{ item.foundry.data_type }}
                                 </v-chip>
-                                <v-chip class="ma-2" color="teal lighten-3">
+                                <v-chip class="ma-2" color="indigo lighten-3" text-color="white">
                                     {{ item.foundry.n_items }}
                                 </v-chip>
-                                <v-chip class="ma-2" color="green lighten-1" text-color="white">
+                                <v-chip class="ma-2" color="red lighten-2" text-color="white">
                                     {{ item.foundry.task_type[0] }}
                                 </v-chip>
 
