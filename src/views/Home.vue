@@ -1,15 +1,17 @@
 <template>
   <div class="home col-12 mb-5">
     <!-- heading content -->
-    <v-sheet class="text-center py-10 col-12" color="indigo lighten-2" elevation="12">
-      <h1 class="text-h1 col-10 mx-auto white--text">
+    <v-sheet class="text-center py-10 col-12 py-12" color="indigo lighten-2" elevation="12">
+      <h1 class="text-h2 col-10 mx-auto white--text pt-12">
         An open source machine learning platform for scientists
       </h1>
-      <v-sheet shaped color="red lighten-3" elevation="20" class="col-5 mx-auto">
-        <p class="text-subtitle-1 mt-3 col-12 mx-auto white--text font-weight-medium">
+      <v-sheet shaped elevation="20" class="col-5 mx-auto mt-5">
+        <p class="text-subtitle-1 col-12 my-0 mx-auto indigo--text lighten-2 font-weight-medium">
           Access datasets and ML models while setting industry benchmarks
         </p>
       </v-sheet>
+      <h1 class="text-h2 col-10 mx-auto white--text pb-12">
+      </h1>
     </v-sheet>
 
     <!-- middle content -->
@@ -37,7 +39,7 @@
 
 
     <!-- Starter code and metadata section -->
-    <v-row class="col-12 px-10 indigo lighten-4 mx-0">
+    <v-row class="indigo lighten-4 pt-3 px-10">
       <h1 class="col-10 mx-auto">We make collaboration easy</h1>
       <v-row class="mb-5 col-10 mx-auto">
         <div class="col-6">
@@ -57,10 +59,12 @@ X,y = f.load_data()
             Once a dataset is uploaded to Foundry, you can load it with just 2
             lines of code.
           </p>
-          <a href="https://colab.research.google.com/github/MLMI2-CSSI/foundry/blob/main/examples/dendrite-segmentation/dendrite_segmentation.ipynb"
-            target="blank"><v-btn class="">
+          <a class="text-decoration-none" href="https://colab.research.google.com/github/MLMI2-CSSI/foundry/blob/main/examples/dendrite-segmentation/dendrite_segmentation.ipynb"
+            target="blank">
+            <v-btn >
               Run this in Google Colab
-            </v-btn></a>
+            </v-btn>
+          </a>
         </div>
       </v-row>
     </v-row>
@@ -131,7 +135,7 @@ X,y = f.load_data()
     <!-- be a part of foundry section -->
 
     <v-row class="indigo lighten-4 pt-3 pb-10">
-      <v-sheet rounded color="red lighten-3" elevation="5" class="col-8 mx-auto mt-5">
+      <v-sheet rounded color="red lighten-2" elevation="5" class="col-8 mx-auto mt-5">
         <h1 class="text-center my-3 text-h2 white--text font-weight-regular">Build Foundry With Us</h1>
         <p class="col-11 mx-auto white--text font-weight-medium">
           At Foundry, we believe accessibility and collaboration are the keys to
