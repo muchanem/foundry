@@ -82,7 +82,7 @@ import Foundry from foundry-ml
 f = Foundry()
 
 # Load the data here!
-f.load({{ dataset.dc.identifier.identifier }})
+f.load('{{ dataset.dc.identifier.identifier }}')
 res = f.load_data()
                      
  </pre>
