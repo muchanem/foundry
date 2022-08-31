@@ -29,7 +29,6 @@ export default {
     items: [
       { title: 'Home', icon: 'mdi-home', to: '/' },
       { title: 'Datasets', icon: 'mdi-magnify', to: '#/datasets' },
-      { title: 'About', icon: 'mdi-help-box', to: '#/about' },
       { title: 'Documentation', icon: 'mdi-file-document-multiple-outline', to: 'https://ai-materials-and-chemistry.gitbook.io/foundry/v/docs/' },
       { title: 'Examples', icon: 'mdi-rocket-launch', to: `https://github.com/MLMI2-CSSI/foundry/tree/main/examples` }
     ]
