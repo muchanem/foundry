@@ -2,92 +2,85 @@
     <v-container>
         <v-card>
             <div class="indigo lighten-4 pa-6">
-                <h1 class="">{{dataset.title}}</h1>
+                <h1 class="">{{ dataset.title }}</h1>
                 <p class="subtitle-1">
                     <span v-for="(author, index) in dataset.authors" :key="author">
-                        {{author}}<span v-if="index != dataset.authors.length - 1">; </span>
-                    </span></p>
+                        {{ author }}<span v-if="index != dataset.authors.length - 1">; </span>
+                    </span>
+                </p>
             </div>
-            <v-tabs color="deep-purple accent-4" right>
+            <v-tabs color="indigo darken-1" right>
                 <v-tab>Overview</v-tab>
                 <v-tab>Publications</v-tab>
                 <v-tab>Implementation</v-tab>
 
                 <v-tab-item class="mx-auto col-10">
                     <v-row>
-                        <h3>Description:</h3>
-                        <p>Halvah liquorice cotton candy tart jelly liquorice wafer. Pie cake chocolate cake jujubes.
-                            Chocolate icing dragée marzipan. Chocolate cake pudding gingerbread. Pastry croissant
-                            gingerbread cheesecake j</p>
+                        <h3>Subjects:</h3>
+                        <div class="col-12 px-0">
+                            <v-chip color="red lighten-3" outlined class="mx-1" v-for="subjects in dataset.dc.subjects"
+                                :key="subjects.subject">
+                                {{ subjects.subject }}
+                            </v-chip>
+                        </div>
+
                     </v-row>
                     <v-row>
                         <div class="col-6 px-0">
                             <h3><i class="mdi mdi-beaker-outline red--text text--lighten-3"></i> Scientific Domain:</h3>
-                            <p>{{dataset.foundry.domain}}</p>
+                            <p >{{ dataset.foundry.domain[0] }} </p>
                         </div>
                         <div class="col-6 px-0">
                             <h3><i class="mdi mdi-run red--text text--lighten-3"></i> Associated Tasks:</h3>
-                            <p>{{dataset.foundry.task_type}}</p>
+                            <v-chip color="indigo lighten-2" outlined class="mx-1" v-for="task in dataset.foundry.task_type" :key="task">
+                                {{ task }}
+                            </v-chip>
                         </div>
                     </v-row>
                     <v-row>
                         <div class="col-6 px-0">
                             <h3><i class="mdi mdi-chart-bar red--text text--lighten-3"></i> Data Type:</h3>
-                            <p>Pudding</p>
+                            <p>{{ dataset.foundry.data_type }}</p>
                         </div>
                         <div class="col-6 px-0">
                             <h3><i class="mdi mdi-file-document red--text text--lighten-3"></i> Data License:</h3>
-                            <p>Gummi bears candy marzipan cheesecake.</p>
+                            <p>I can't find this one</p>
                         </div>
                     </v-row>
                     <v-row>
                         <div class="col-6 px-0">
                             <h3><i class="mdi mdi-weight-kilogram red--text text--lighten-3"></i> Size:</h3>
-                            <p>{{dataset.foundry.n_items}}</p>
+                            <p>{{ dataset.foundry.n_items }} items</p>
                         </div>
                         <div class="col-6 px-0">
+                            <h3><i class="mdi mdi-identifier red--text text--lighten-3"></i> DOI:</h3>
+                            <p>{{ dataset.dc.identifier.identifier }}</p>
+
 
                         </div>
                     </v-row>
-                    <v-row>
-                        <h3>Versions</h3>
-
-                        <v-simple-table dense height="300px" class="col-12">
-                            <template v-slot:default>
-                                <thead>
-                                    <tr>
-                                        <th class="text-left">
-                                            Name
-                                        </th>
-                                        <th class="text-left">
-                                            Description
-                                        </th>
-                                        <th class="text-left">
-                                            Date
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>my_data_v2.0</td>
-                                        <td>More features</td>
-                                        <td>8/11/2022</td>
-                                    </tr>
-                                    <tr>
-                                        <td>my_data_v1.0</td>
-                                        <td>Added all the data from 7/10/2022</td>
-                                        <td>8/10/2022</td>
-                                    </tr>
-
-                                </tbody>
-                            </template>
-                        </v-simple-table>
-
+                     <v-row>
+                        <div class="col-6 px-0">
+                            <h3><i class="mdi mdi-calendar-star-outline red--text text--lighten-3"></i> Date Published:</h3>
+                            <p>{{ dataset.dc.dates[0].date }} </p>
+                        </div>
+                        <div class="col-6 px-0">
+                            
+                        </div>
                     </v-row>
+
 
                 </v-tab-item>
                 <v-tab-item class="mx-auto col-10">
                     <h2>Publications</h2>
+                    <v-card elevation="3" outlined class="mx-auto col-md-5 col-12 my-6"
+                        v-for="item in dataset.dc.titles" :key="item.title">
+                        <v-card-title style="word-break: keep-all;">{{ item.title }}</v-card-title>
+                    </v-card>
+
+
+
+
 
                 </v-tab-item>
                 <v-tab-item class="mx-auto col-10">
@@ -103,7 +96,7 @@ import Foundry from foundry-ml
 f = Foundry()
 
 # Load the data here!
-f.load(dataset_doi)
+f.load({{ dataset.dc.identifier.identifier }})
 res = f.load_data()
                      
  </pre>
@@ -190,7 +183,7 @@ export default {
 
         // Format the POST query for Globus search - search via mdf.source_id
         var query = {
-            "q": "(mdf.source_id:"+this.$route.params.id+") AND (mdf.resource_type:dataset)",
+            "q": "(mdf.source_id:" + this.$route.params.id + ") AND (mdf.resource_type:dataset)",
             "limit": 1,
             "advanced": true,
         }
@@ -222,7 +215,7 @@ export default {
     data: () => ({
         drawer: null,
         dataset: {},
-        facets: {"tags":[]},
+        facets: { "tags": [] },
     }),
 }
 
