@@ -114,46 +114,51 @@ res = f.load_data()
                                         Type
                                     </th>
                                     <th class="text-left">
-                                        Filter
-                                    </th>
-                                    <th class="text-left">
                                         Units
                                     </th>
                                     <th class="text-left">
                                         Description
                                     </th>
-                                    <th class="text-left">
-                                        Classes
-                                    </th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>img</td>
-                                    <td>input</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
+                                <tr v-for="item in dataset.foundry.keys" :key="item.key[0]">
+                                    <td>{{item.key[0]}}</td>
+                                    <td>{{item.type}}</td>
+                                    <td>{{item.units}}</td>
+                                    <td>{{item.description}}</td>
                                 </tr>
-                                <tr>
-                                    <td>coords</td>
-                                    <td>input</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                </tr>
-
                             </tbody>
                         </template>
                     </v-simple-table>
                     <h3>Splits</h3>
-
+                    <v-simple-table dense class="col-12 mb-10">
+                        <template v-slot:default>
+                            <thead>
+                                <tr>
+                                    <th class="text-left">
+                                        Label
+                                    </th>
+                                    <th class="text-left">
+                                        Path
+                                    </th>
+                                    <th class="text-left">
+                                        Type
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="item in dataset.foundry.splits" :key="item.label">
+                                    <td>{{item.label}}</td>
+                                    <td>{{item.path}}</td>
+                                    <td>{{item.type}}</td>  
+                                </tr>
+                            </tbody>
+                        </template>
+                    </v-simple-table>
                 </v-tab-item>
             </v-tabs>
         </v-card>
-
     </v-container>
 </template>
 
