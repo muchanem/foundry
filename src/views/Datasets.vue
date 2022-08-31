@@ -2,10 +2,10 @@
     <div class="datasets">
         <v-container>
             <v-row>
-                <h1 class="mx-6 mt-6">Dataset Search</h1>
+                <h1 class="mx-6 mt-6">Datasets</h1>
             </v-row>
             <v-row>
-                <v-col class="col-md-3 col-12">
+                <!-- <v-col class="col-md-3 col-12">
                     <v-card class="mx-auto">
                         <v-toolbar color="red lighten-3" dark>
                             <v-toolbar-title>Topics</v-toolbar-title>
@@ -30,30 +30,28 @@
                                 </v-list-item>
                             </v-list-group>
                         </v-list>
-                        <!-- <div class="col-12">
-                            <v-btn color="indigo lighten-3" elevation="2" dark class="col-12">
-                                search</v-btn>
-                        </div> -->
                     </v-card>
-                </v-col>
+                </v-col> -->
                 <v-col>
+                    <v-row>
 
-                    <v-card elevation="3" height="200px" outlined class="mx-auto col-md-10 col-12 my-6"
-                        v-for="item in items" :key="item.title" :to="item.to" link>
-                        <v-card-title>{{ item.title }}</v-card-title>
-                        <v-card-text>
-                            <v-chip class="ma-2" color="primary">
-                                {{ item.foundry.data_type }}
-                            </v-chip>
-                            <v-chip class="ma-2" color="secondary">
-                                {{ item.foundry.n_items }}
-                            </v-chip>
-                            <v-chip class="ma-2" color="green" text-color="white">
-                                {{ item.foundry.task_type }}
-                            </v-chip>
+                        <v-card elevation="3"  outlined class="mx-auto col-md-5 col-12 my-6"
+                            v-for="item in items" :key="item.title" :to="item.to" link>
+                            <v-card-title style="word-break: keep-all;">{{ item.title }}</v-card-title>
+                            <v-card-text>
+                                <v-chip class="ma-2" color="primary">
+                                    {{ item.foundry.data_type }}
+                                </v-chip>
+                                <v-chip class="ma-2" color="secondary">
+                                    {{ item.foundry.n_items }}
+                                </v-chip>
+                                <v-chip class="ma-2" color="green" text-color="white">
+                                    {{ item.foundry.task_type }}
+                                </v-chip>
 
-                        </v-card-text>
-                    </v-card>
+                            </v-card-text>
+                        </v-card>
+                    </v-row>
 
                 </v-col>
             </v-row>
@@ -81,10 +79,10 @@ export default {
             "advanced": true,
             "facets": [
                 {
-                "name": "tags",
-                "field_name": "dc.subjects.subject",
-                "type": "terms", //"date_histogram",
-                "size":20
+                    "name": "tags",
+                    "field_name": "dc.subjects.subject",
+                    "type": "terms", //"date_histogram",
+                    "size": 20
                 }
             ]
         }
@@ -114,19 +112,19 @@ export default {
                 }
 
                 // Push facet results into the searchTerms for display purposes
-                  self.searchTerms.push( {
+                self.searchTerms.push({
                     "icon": 'mdi-beaker-outline',
                     "subterms": self.facets.tags,
                     "title": 'Tag',
-                  })
+                })
 
-            
+
             })
     },
     data: () => ({
         drawer: null,
         items: [],
-        facets: {"tags":[]},
+        facets: { "tags": [] },
         searchTerms: [
             {
                 icon: 'mdi-beaker-outline',
