@@ -14,7 +14,7 @@
                 <v-tab>Publications</v-tab>
                 <v-tab>Implementation</v-tab>
 
-                <v-tab-item class="mx-auto col-10">
+                <v-tab-item class="mx-auto col-10 mb-10">
                     <v-row>
                         <h3>Subjects:</h3>
                         <div class="col-12 px-0">
@@ -43,8 +43,8 @@
                             <p>{{ dataset.foundry.data_type }}</p>
                         </div>
                         <div class="col-6 px-0">
-                            <h3><i class="mdi mdi-file-document red--text text--lighten-3"></i> Data License:</h3>
-                            <p>I can't find this one</p>
+                            <h3><i class="mdi mdi-calendar-star-outline red--text text--lighten-3"></i> Date Published:</h3>
+                            <p>{{ dataset.dc.dates[0].date }} </p>
                         </div>
                     </v-row>
                     <v-row>
@@ -59,30 +59,16 @@
 
                         </div>
                     </v-row>
-                     <v-row>
-                        <div class="col-6 px-0">
-                            <h3><i class="mdi mdi-calendar-star-outline red--text text--lighten-3"></i> Date Published:</h3>
-                            <p>{{ dataset.dc.dates[0].date }} </p>
-                        </div>
-                        <div class="col-6 px-0">
-                            
-                        </div>
-                    </v-row>
-
-
                 </v-tab-item>
-                <v-tab-item class="mx-auto col-10">
+
+                <v-tab-item class="mx-auto col-10 mb-10">
                     <h2>Publications</h2>
                     <v-card elevation="3" outlined class="mx-auto col-md-5 col-12 my-6"
                         v-for="item in dataset.dc.titles" :key="item.title">
                         <v-card-title style="word-break: keep-all;">{{ item.title }}</v-card-title>
                     </v-card>
-
-
-
-
-
                 </v-tab-item>
+
                 <v-tab-item class="mx-auto col-10">
                     <h2>Using this dataset</h2>
                     <p>You can load this dataset with 2 lines of code if you already have Foundry set up. If you need to
