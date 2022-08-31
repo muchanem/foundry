@@ -2,54 +2,42 @@
   <div class="home col-12 mb-5">
     <!-- heading content -->
     <div class="jumbotron text-center py-5 col-12 bg-light">
-      <h1 class="display-4 col-10 mx-auto">
+      <h1 class="text-h1 col-10 mx-auto">
         An open source machine learning platform for scientists
       </h1>
-      <p class="lead mt-3 col-7 mx-auto">
+      <p class="text-subtitle-1 mt-3 col-7 mx-auto">
         Access datasets and ML models while setting industry benchmarks
       </p>
     </div>
 
     <!-- middle content -->
-    <div class="row my-5">
-      <div class="col-10 mx-auto">
-        <div class="row">
-          <div class="col-sm-4 mx-auto">
-            <div class="card">
-              <div class="card-body text-center">
-                <a href="https://github.com/MLMI2-CSSI/foundry/tree/main/examples/publishing-guides" target="blank">
-                  <b-icon icon="file-bar-graph" class="display-4 icons my-2"></b-icon>
-                </a>
+    <v-row class="col-md-8 mx-auto col-12">
+      <v-card elevation="3" outlined class="mx-auto col-md-5 col-6 my-6 text-center">
+        <a href="https://ai-materials-and-chemistry.gitbook.io/foundry/publishing/publishing-datasets" target="blank">
+          <h1 class="display-2"><i class="mdi mdi-chart-bar-stacked red--text text--lighten-3"></i></h1>
+        </a>
+        <v-card-title class="justify-center">Add your dataset</v-card-title>
+        <v-card-text>
+          We host data from a variety of scientific domains and make it easy to share and use.
+        </v-card-text>
+      </v-card>
 
-                <h5 class="card-title mt-2">Add your dataset</h5>
-                <p class="card-text">
-                  We host data from a variety of scientific domains and make it
-                  easy to share and use.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4 mx-auto">
-            <div class="card">
-              <div class="card-body text-center">
-                <a href="https://github.com/MLMI2-CSSI/foundry/tree/main/examples/publishing-guides" target="blank">
-                  <b-icon icon="gear" class="display-4 icons my-2"></b-icon>
-                </a>
+      <v-card elevation="3" outlined class="mx-auto col-md-5 col-6 my-6 text-center">
+        <a href="#/datasets">
+          <h1 class="display-2"><i class="mdi mdi-archive-search red--text text--lighten-3"></i></h1>
+        </a>
+        <v-card-title class="justify-center">Browse Datasets</v-card-title>
+        <v-card-text>
+          Find the data you're looking for! See all the Foundry datasets and get started.
+        </v-card-text>
+      </v-card>
+    </v-row>
 
-                <h5 class="card-title mt-2">Browse Datasets</h5>
-                <p class="card-text">
-                  
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+
     <!-- Starter code and metadata section -->
     <div class="col-10 my-5 mx-auto pt-4">
       <h1 class="mb-5">We make collaboration easy</h1>
-      <div class="row mb-5">
+      <v-row class="mb-5">
         <div class="col-6">
           <vue-code-highlight language="python">
             <pre class="language-python">
@@ -59,11 +47,7 @@ X,y = f.load_data()
 </pre>
           </vue-code-highlight>
 
-          <img
-          alt="dendrite segmentation data snippet"
-          src="../assets/dendrite-seg-img.png"
-          class="col-12 pb-3"
-        />
+          <img alt="dendrite segmentation data snippet" src="../assets/dendrite-seg-img.png" class="col-12 pb-3" />
 
         </div>
         <div class="col-5">
@@ -76,62 +60,88 @@ X,y = f.load_data()
               Run this in Google Colab
             </button></a>
         </div>
-      </div>
+      </v-row>
       <!-- end of row -->
       <div class="col-12 text-end">
         <h1 class="col-11 my-5">and save you valuable time</h1>
       </div>
-      <div class="row">
-        <div class="col-6">
+      <v-row>
+        <v-col class="col-6">
           <p class="lead">
             No need to spend time making sense of someone else's data. We collect information about each dataset to
             take out any guesswork on your part. Our
             publishing process also includes a human review to make sure it meets our
             data standards.
           </p>
-        </div>
-        <div class="col-5">
-          <table class="table table-striped">
-            <tbody>
-              <tr>
-                <td class="fw-bold">hello</td>
-                <td>hello</td>
-              </tr>
-              <tr>
-                <td class="fw-bold">hello</td>
-                <td>hello</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+        </v-col>
+        <v-col class="col-5">
+          <v-simple-table dense class="col-12 mb-10">
+            <template v-slot:default>
+              <thead>
+                <tr>
+                  <th class="text-left">
+                    Key
+                  </th>
+                  <th class="text-left">
+                    Type
+                  </th>
+                  <th class="text-left">
+                    Units
+                  </th>
+                  <th class="text-left">
+                    Description
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>reference</td>
+                  <td>input</td>
+                  <td></td>
+                  <td>source publication of the band gap value</td>
+                </tr>
+                <tr>
+                  <td>structure</td>
+                  <td>input</td>
+                  <td></td>
+                  <td>the structure of this compound</td>
+                </tr>
+                <tr>
+                  <td>bandgap value (eV)</td>
+                  <td>target</td>
+                  <td>eV</td>
+                  <td>tvalue of the band gap</td>
+                </tr>
+              </tbody>
+            </template>
+          </v-simple-table>
+        </v-col>
+      </v-row>
       <!-- end of row -->
     </div>
 
     <!-- be a part of foundry section -->
 
-    <hr class="col-10 m-auto" />
 
-    <div class="mx-auto col-7 mt-5">
-      <div class="col-11 mx-auto">
-        <h1 class="text-center my-3 display-4">Build Foundry With Us</h1>
-        <p>
-          At Foundry, we believe accessibility and collaboration are the keys to
-          problem solving. That's why we've made it super easy for you to share
-          and use data. If you have a dataset you'd like to contribute, our
-          <a href="https://github.com/MLMI2-CSSI/foundry/tree/main/examples/publishing-guides" target="blank">publishing
-            guide</a>
-          can set you up to do that.
-        </p>
-        <p>
-          Check out our
-          <a href="https://ai-materials-and-chemistry.gitbook.io/foundry/v/docs/" target="blank">documentation</a>
-          to see how easy it is to use Foundry, and follow our
-          <a href="https://github.com/MLMI2-CSSI/foundry/tree/main/examples" target="blank">examples</a>
-          to do it all yourself.
-        </p>
-      </div>
+    <div class="col-10 mx-auto mt-5">
+      <h1 class="text-center my-3 text-h1">Build Foundry With Us</h1>
+      <p class="col-8 mx-auto">
+        At Foundry, we believe accessibility and collaboration are the keys to
+        problem solving. That's why we've made it super easy for you to share
+        and use data. If you have a dataset you'd like to contribute, our
+        <a href="https://github.com/MLMI2-CSSI/foundry/tree/main/examples/publishing-guides" target="blank">publishing
+          guide</a>
+        can set you up to do that.
+      </p>
+      <p class="col-8 mx-auto">
+        Check out our
+        <a href="https://ai-materials-and-chemistry.gitbook.io/foundry/v/docs/" target="blank">documentation</a>
+        to see how easy it is to use Foundry, and follow our
+        <a href="https://github.com/MLMI2-CSSI/foundry/tree/main/examples" target="blank">examples</a>
+        to do it all yourself.
+      </p>
     </div>
+
   </div>
 </template>
 
@@ -145,9 +155,9 @@ import 'prism-es6/components/prism-python';
 
 
 export default {
-    name: 'Home',
-    components: {
-        VueCodeHighlight
-    }
+  name: 'Home',
+  components: {
+    VueCodeHighlight
+  }
 }
 </script>
