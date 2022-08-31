@@ -10,7 +10,7 @@
       <v-spacer></v-spacer>
 
       <v-toolbar-items v-for="item in items" :key="item.title" :to="item.to" link>
-        <a :href="item.to" class="text-decoration-none deep-purple--text darken-1">
+        <a :href="item.to" class="text-decoration-none indigo--text darken-1 ">
           <v-toolbar-title class="mx-4 mt-4 text-body-1">{{ item.title }}</v-toolbar-title>
         </a>
       </v-toolbar-items>
