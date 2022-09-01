@@ -1,5 +1,7 @@
 # foundry-app
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/78ec7012-be64-4a45-8ffe-a2cb9403ba0a/deploy-status)](https://app.netlify.com/sites/starlit-mousse-7afddf/deploys)
+
 ## Project setup
 ```
 npm install
