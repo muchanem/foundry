@@ -6,7 +6,7 @@
         An open source machine learning platform for scientists
       </h1>
       <v-sheet rounded="xl" elevation="20" class="col-5 mx-auto mt-5 py-2">
-        <p class="text-subtitle-1 col-12 my-0 mx-auto red--text text--lighten-2 font-weight-medium">
+        <p class="text-subtitle-1 col-12 my-0 mx-auto indigo--text text--lighten-2 font-weight-medium">
           Access datasets and ML models while setting industry benchmarks
         </p>
       </v-sheet>
