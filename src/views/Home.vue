@@ -5,7 +5,7 @@
       <h1 class="text-h2 col-10 mx-auto white--text pt-12">
         An open source machine learning platform for scientists
       </h1>
-      <v-sheet shaped elevation="20" class="col-5 mx-auto mt-5">
+      <v-sheet rounded="xl" elevation="20" class="col-5 mx-auto mt-5 py-2">
         <p class="text-subtitle-1 col-12 my-0 mx-auto indigo--text lighten-2 font-weight-medium">
           Access datasets and ML models while setting industry benchmarks
         </p>
@@ -40,7 +40,7 @@
 
     <!-- Starter code and metadata section -->
     <v-row class="indigo lighten-4 pt-3 px-10">
-      <h1 class="col-10 mx-auto">We make collaboration easy</h1>
+      <h1 class="col-10 mx-auto">We make collaboration and reuse easy</h1>
       <v-row class="mb-5 col-10 mx-auto">
         <div class="col-6">
           <vue-code-highlight language="python">
@@ -59,9 +59,10 @@ X,y = f.load_data()
             Once a dataset is uploaded to Foundry, you can load it with just 2
             lines of code.
           </p>
-          <a class="text-decoration-none" href="https://colab.research.google.com/github/MLMI2-CSSI/foundry/blob/main/examples/dendrite-segmentation/dendrite_segmentation.ipynb"
+          <a class="text-decoration-none"
+            href="https://colab.research.google.com/github/MLMI2-CSSI/foundry/blob/main/examples/dendrite-segmentation/dendrite_segmentation.ipynb"
             target="blank">
-            <v-btn >
+            <v-btn>
               Run this in Google Colab
             </v-btn>
           </a>
@@ -136,20 +137,26 @@ X,y = f.load_data()
 
     <v-row class="indigo lighten-4 pt-3 pb-10">
       <v-sheet rounded color="red lighten-2" elevation="5" class="col-8 mx-auto mt-5">
-        <h1 class="text-center my-3 text-h2 white--text font-weight-regular">Build Foundry With Us</h1>
+        <h1 class="text-center my-3 text-h2 white--text ">Build Foundry With Us</h1>
         <p class="col-11 mx-auto white--text font-weight-medium">
           At Foundry, we believe accessibility and collaboration are the keys to
           problem solving. That's why we've made it super easy for you to share
           and use data. If you have a dataset you'd like to contribute, our
-          <a href="https://github.com/MLMI2-CSSI/foundry/tree/main/examples/publishing-guides" target="blank">publishing
-            guide</a>
+          <a class="text-decoration-none"
+            href="https://github.com/MLMI2-CSSI/foundry/tree/main/examples/publishing-guides" target="blank">
+            <v-btn elevation="2" small>publishing guide</v-btn>
+          </a>
           can set you up to do that.
         </p>
         <p class="col-11 mx-auto white--text font-weight-medium">
           Check out our
-          <a href="https://ai-materials-and-chemistry.gitbook.io/foundry/v/docs/" target="blank">documentation</a>
+          <a class="text-decoration-none" href="https://ai-materials-and-chemistry.gitbook.io/foundry/v/docs/" target="blank">
+            <v-btn elevation="2" small>documentation</v-btn>
+            </a>
           to see how easy it is to use Foundry, and follow our
-          <a href="https://github.com/MLMI2-CSSI/foundry/tree/main/examples" target="blank">examples</a>
+          <a class="text-decoration-none" href="https://github.com/MLMI2-CSSI/foundry/tree/main/examples" target="blank">
+            
+            <v-btn elevation="2" small>examples</v-btn></a>
           to do it all yourself.
         </p>
       </v-sheet>
