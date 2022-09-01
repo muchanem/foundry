@@ -1,7 +1,7 @@
 <template>
     <v-container>
         <v-card>
-            <div class="indigo lighten-4 pa-6">
+            <div class="indigo lighten-2 pa-6">
                 <h1 class="white--text font-weight-medium">{{ dataset.title }}</h1>
                 <p class="subtitle-1 white--text font-weight-medium">
                     <span v-for="(author, index) in dataset.authors" :key="author">
