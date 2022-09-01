@@ -18,7 +18,7 @@
                     <v-row>
                         <h3>Subjects:</h3>
                         <div class="col-12 px-0">
-                            <v-chip color="red lighten-3" outlined class="mx-1" 
+                            <v-chip color="red lighten-2" outlined class="mx-1" 
                                 v-for="subject in dataset.dc.subjects"
                                 :key="subject.subject">
                                 {{ subject.subject }}
