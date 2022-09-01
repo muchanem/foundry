@@ -37,17 +37,32 @@
 
                         <v-card elevation="3"  outlined class="mx-auto col-md-5 col-12 my-6"
                             v-for="item in items" :key="item.title" :to="item.to" link>
-                            <v-card-title style="word-break: keep-all;">{{ item.title }}</v-card-title>
+                            <v-card-title class="white-text" style="word-break: keep-all;">{{ item.title }}</v-card-title>
                             <v-card-text>
-                                <v-chip class="ma-2" color="blue lighten-1" text-color="white">
-                                    {{ item.foundry.data_type }}
-                                </v-chip>
-                                <v-chip class="ma-2" color="indigo lighten-3" text-color="white">
-                                    {{ item.foundry.n_items }}
-                                </v-chip>
-                                <v-chip class="ma-2" color="red lighten-2" text-color="white">
-                                    {{ item.foundry.task_type[0] }}
-                                </v-chip>
+                                <div class="font-weight-medium">
+                                    <span v-for="(author, index) in item.authors" :key="author">
+                                        {{ author }}<span v-if="index != item.authors.length - 1">; </span>
+                                    </span>
+                                </div>
+                                <div class="font-weight-medium">
+                                    DOI: {{item.dc.identifier.identifier}}
+                                </div>
+                                
+                                <div>
+                                    <v-chip class="ma-2" color="blue lighten-1" text-color="white">
+                                        {{ item.foundry.data_type }}
+                                    </v-chip>
+                                   
+                                    <v-chip class="ma-2" color="red lighten-2" text-color="white">
+                                        {{ item.foundry.task_type[0] }}
+                                    </v-chip>
+                                     <v-chip class="ma-2" color="indigo lighten-3" text-color="white">
+                                        {{ item.foundry.n_items }} Items
+                                    </v-chip>
+                                </div>
+
+
+                               
 
                             </v-card-text>
                         </v-card>
@@ -95,9 +110,18 @@ export default {
                 console.log(res)
                 for (let i = 0; i < res.data.gmeta.length; i++) {
                     // TODO, add more data into the view object for display
+                    var creators = res.data.gmeta[0].entries[0].content.dc.creators
+                    var authors = []
+
+                    for (let i = 0; i < creators.length; i++) {
+                        authors.push(creators[i].creatorName)
+                    }
+
                     self.items.push({
                         title: res.data.gmeta[i].entries[0].content.dc.titles[0].title,
                         foundry: res.data.gmeta[i].entries[0].content.projects.foundry,
+                        dc: res.data.gmeta[i].entries[0].content.dc,
+                        authors: authors,
                         to: "/datasets/" + res.data.gmeta[i].entries[0].content.mdf.source_id
                     })
                 }

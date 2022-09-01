@@ -1,9 +1,9 @@
 <template>
     <v-container>
         <v-card>
-            <div class="indigo lighten-4 pa-6">
-                <h1 class="">{{ dataset.title }}</h1>
-                <p class="subtitle-1">
+            <div class="indigo lighten-2 pa-6">
+                <h1 class="white--text font-weight-medium">{{ dataset.title }}</h1>
+                <p class="subtitle-1 white--text font-weight-medium">
                     <span v-for="(author, index) in dataset.authors" :key="author">
                         {{ author }}<span v-if="index != dataset.authors.length - 1">; </span>
                     </span>
@@ -18,9 +18,10 @@
                     <v-row>
                         <h3>Subjects:</h3>
                         <div class="col-12 px-0">
-                            <v-chip color="red lighten-3" outlined class="mx-1" v-for="subjects in dataset.dc.subjects"
-                                :key="subjects.subject">
-                                {{ subjects.subject }}
+                            <v-chip color="red lighten-2" outlined class="mx-1" 
+                                v-for="subject in dataset.dc.subjects"
+                                :key="subject.subject">
+                                {{ subject.subject }}
                             </v-chip>
                         </div>
 
@@ -82,7 +83,7 @@ import Foundry from foundry-ml
 f = Foundry()
 
 # Load the data here!
-f.load({{ dataset.dc.identifier.identifier }})
+f.load('{{ dataset.dc.identifier.identifier }}')
 res = f.load_data()
                      
  </pre>
