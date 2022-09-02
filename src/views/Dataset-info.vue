@@ -9,73 +9,54 @@
                     </span>
                 </p>
             </div>
-            <v-tabs color="indigo darken-1" right>
-                <v-tab>Overview</v-tab>
-                <v-tab>Publications</v-tab>
-                <v-tab>Implementation</v-tab>
 
-                <v-tab-item class="mx-auto col-md-10 col-11 mb-10">
-                    <v-row class="mt-2">
-                        <h3>Subjects:</h3>
-                        <div class="col-12 px-0">
-                            <v-chip color="red lighten-2" outlined class="mx-1 my-1" 
-                                v-for="subject in dataset.dc.subjects"
-                                :key="subject.subject">
-                                {{ subject.subject }}
-                            </v-chip>
-                        </div>
+            <div class="mx-auto col-md-10 col-11 mb-10">
+                <h2 class="mt-3">Overview</h2>
+                <div class="pl-md-5">
+                    <div>
+                        <v-chip color="red lighten-2" outlined class="mx-1 my-1" v-for="subject in dataset.dc.subjects"
+                            :key="subject.subject">
+                            {{ subject.subject }}
+                        </v-chip>
+                    </div>
 
-                    </v-row>
-                    <v-row>
-                        <div class="col-6 px-0">
-                            <h3><i class="mdi mdi-beaker-outline red--text text--lighten-3"></i> Scientific Domain:</h3>
-                            <p >{{ dataset.foundry.domain[0] }} </p>
+                    <v-row class="mt-0">
+                        <div class="col-6">
+                            <h3><i class="mdi mdi-beaker-outline red--text text--lighten-3"></i> Scientific Domain</h3>
+                            <p>{{ dataset.foundry.domain[0] }} </p>
                         </div>
-                        <div class="col-6 px-0">
-                            <h3><i class="mdi mdi-run red--text text--lighten-3"></i> Associated Tasks:</h3>
-                            <v-chip color="indigo lighten-2" outlined class="mx-1" v-for="task in dataset.foundry.task_type" :key="task">
+                        <div class="col-6">
+                            <h3><i class="mdi mdi-run red--text text--lighten-3"></i> Associated Tasks</h3>
+                            <v-chip color="indigo lighten-2" outlined class="mx-1"
+                                v-for="task in dataset.foundry.task_type" :key="task">
                                 {{ task }}
                             </v-chip>
                         </div>
                     </v-row>
-                    <v-row>
-                        <div class="col-6 px-0">
-                            <h3><i class="mdi mdi-chart-bar red--text text--lighten-3"></i> Data Type:</h3>
+                    <v-row class="mt-0">
+                        <div class="col-6">
+                            <h3><i class="mdi mdi-chart-bar red--text text--lighten-3"></i> Data Type</h3>
                             <p>{{ dataset.foundry.data_type }}</p>
                         </div>
-                        <div class="col-6 px-0">
-                            <h3><i class="mdi mdi-calendar-star-outline red--text text--lighten-3"></i> Date Published:</h3>
+                        <div class="col-6">
+                            <h3><i class="mdi mdi-calendar-star-outline red--text text--lighten-3"></i> Date Published
+                            </h3>
                             <p>{{ dataset.dc.dates[0].date }} </p>
                         </div>
                     </v-row>
-                    <v-row>
-                        <div class="col-6 px-0">
-                            <h3><i class="mdi mdi-weight-kilogram red--text text--lighten-3"></i> Size:</h3>
+                    <v-row class="mt-0">
+                        <div class="col-6">
+                            <h3><i class="mdi mdi-weight-kilogram red--text text--lighten-3"></i> Size</h3>
                             <p>{{ dataset.foundry.n_items }} items</p>
                         </div>
-                        <div class="col-6 px-0">
-                            <h3><i class="mdi mdi-identifier red--text text--lighten-3"></i> DOI:</h3>
+                        <div class="col-6">
+                            <h3><i class="mdi mdi-identifier red--text text--lighten-3"></i> DOI</h3>
                             <p>{{ dataset.dc.identifier.identifier }}</p>
-
-
                         </div>
                     </v-row>
-                </v-tab-item>
-
-                <v-tab-item class="mx-auto col-md-10 col-12 mb-10">
-                    <h2>Publications</h2>
-                    <v-card elevation="3" outlined class="mx-auto col-md-5 col-12 my-6"
-                        v-for="item in dataset.dc.titles" :key="item.title">
-                        <v-card-title style="word-break: keep-all;">{{ item.title }}</v-card-title>
-                    </v-card>
-                </v-tab-item>
-
-                <v-tab-item class="mx-auto col-md-10 col-12">
-                    <h2>Using this dataset</h2>
-                    <p>You can load this dataset with 2 lines of code if you already have Foundry set up. If you need to
-                        set up Foundry, check out our <a href="https://github.com/MLMI2-CSSI/foundry/tree/main/examples" target="blank">example notebooks</a> and <a href="https://ai-materials-and-chemistry.gitbook.io/foundry/v/docs/"
-                            target="blank">documentation</a> for how to get started.</p>
-
+                </div>
+                <h2 class="mt-6">Using this dataset</h2>
+                <div class="pl-md-5">
                     <vue-code-highlight language="python">
                         <pre class="language-python">
 # Make sure you've imported and instantiated Foundry
@@ -88,7 +69,16 @@ res = f.load_data()
                      
  </pre>
                     </vue-code-highlight>
-                    <h2 class="mt-6 mb-4">Metadata associated with this dataset</h2>
+                    <p>You can load this dataset with 2 lines of code if you already have Foundry set up. If you need to
+                        set up Foundry, check out our <a class="red--text text--lighten-3"
+                            href="https://github.com/MLMI2-CSSI/foundry/tree/main/examples" target="blank">example
+                            notebooks</a> and <a class="red--text text--lighten-3"
+                            href="https://ai-materials-and-chemistry.gitbook.io/foundry/v/docs/"
+                            target="blank">documentation</a> for how to get started.</p>
+                </div>
+
+                <h2 class="mt-6 mb-2">Metadata associated with this dataset</h2>
+                <div class="pl-md-5">
                     <h3>Keys</h3>
                     <v-simple-table dense class="col-12">
                         <template v-slot:default>
@@ -110,10 +100,10 @@ res = f.load_data()
                             </thead>
                             <tbody>
                                 <tr v-for="item in dataset.foundry.keys" :key="item.key[0]">
-                                    <td>{{item.key[0]}}</td>
-                                    <td>{{item.type}}</td>
-                                    <td>{{item.units}}</td>
-                                    <td>{{item.description}}</td>
+                                    <td>{{ item.key[0] }}</td>
+                                    <td>{{ item.type }}</td>
+                                    <td>{{ item.units }}</td>
+                                    <td>{{ item.description }}</td>
                                 </tr>
                             </tbody>
                         </template>
@@ -136,15 +126,22 @@ res = f.load_data()
                             </thead>
                             <tbody>
                                 <tr v-for="item in dataset.foundry.splits" :key="item.label">
-                                    <td>{{item.label}}</td>
-                                    <td>{{item.path}}</td>
-                                    <td>{{item.type}}</td>  
+                                    <td>{{ item.label }}</td>
+                                    <td>{{ item.path }}</td>
+                                    <td>{{ item.type }}</td>
                                 </tr>
                             </tbody>
                         </template>
                     </v-simple-table>
-                </v-tab-item>
-            </v-tabs>
+                </div>
+                <h2>Publications</h2>
+                <div class="pl-md-5 mb-10">
+                    <v-card elevation="3" outlined class="mx-auto col-md-5 col-12 my-6"
+                        v-for="item in dataset.dc.titles" :key="item.title">
+                        <v-card-title style="word-break: keep-all;">{{ item.title }}</v-card-title>
+                    </v-card>
+                </div>
+            </div>
         </v-card>
     </v-container>
 </template>
