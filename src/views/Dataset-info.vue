@@ -73,7 +73,7 @@
                 <v-tab-item class="mx-auto col-10">
                     <h2>Using this dataset</h2>
                     <p>You can load this dataset with 2 lines of code if you already have Foundry set up. If you need to
-                        set up Foundry, check out our <a href="" target="blank">example notebooks</a> and <a href=""
+                        set up Foundry, check out our <a href="https://github.com/MLMI2-CSSI/foundry/tree/main/examples" target="blank">example notebooks</a> and <a href="https://ai-materials-and-chemistry.gitbook.io/foundry/v/docs/"
                             target="blank">documentation</a> for how to get started.</p>
 
                     <vue-code-highlight language="python">
