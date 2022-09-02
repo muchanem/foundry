@@ -1,9 +1,11 @@
 <template>
   <v-app id="inspire">
 
-    <v-toolbar class="flex-grow-0">
+    <!-- desktop nav bar -->
+    <v-toolbar class="flex-grow-0 d-none d-md-block">
       <a href="/">
-        <v-toolbar-title><img alt="Foundry logo icon" src="./assets/logo-full.png" style="width: 25%" />
+        <v-toolbar-title>
+          <img alt="Foundry logo icon" src="./assets/logo-full.png" style="width: 200px" />
         </v-toolbar-title>
       </a>
 
@@ -15,6 +17,12 @@
         </a>
       </v-toolbar-items>
     </v-toolbar>
+    <!-- end of desktop nav bar -->
+
+    <!-- start of mobile nav bar -->
+
+
+    <!-- end of mobile nav bar -->
 
     <v-main>
       <router-view></router-view>
