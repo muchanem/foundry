@@ -14,11 +14,11 @@
                 <v-tab>Publications</v-tab>
                 <v-tab>Implementation</v-tab>
 
-                <v-tab-item class="mx-auto col-10 mb-10">
-                    <v-row>
+                <v-tab-item class="mx-auto col-md-10 col-11 mb-10">
+                    <v-row class="mt-2">
                         <h3>Subjects:</h3>
                         <div class="col-12 px-0">
-                            <v-chip color="red lighten-2" outlined class="mx-1" 
+                            <v-chip color="red lighten-2" outlined class="mx-1 my-1" 
                                 v-for="subject in dataset.dc.subjects"
                                 :key="subject.subject">
                                 {{ subject.subject }}
@@ -62,7 +62,7 @@
                     </v-row>
                 </v-tab-item>
 
-                <v-tab-item class="mx-auto col-10 mb-10">
+                <v-tab-item class="mx-auto col-md-10 col-12 mb-10">
                     <h2>Publications</h2>
                     <v-card elevation="3" outlined class="mx-auto col-md-5 col-12 my-6"
                         v-for="item in dataset.dc.titles" :key="item.title">
@@ -70,7 +70,7 @@
                     </v-card>
                 </v-tab-item>
 
-                <v-tab-item class="mx-auto col-10">
+                <v-tab-item class="mx-auto col-md-10 col-12">
                     <h2>Using this dataset</h2>
                     <p>You can load this dataset with 2 lines of code if you already have Foundry set up. If you need to
                         set up Foundry, check out our <a href="https://github.com/MLMI2-CSSI/foundry/tree/main/examples" target="blank">example notebooks</a> and <a href="https://ai-materials-and-chemistry.gitbook.io/foundry/v/docs/"
