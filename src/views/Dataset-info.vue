@@ -58,9 +58,9 @@
                 <h2 class="mt-10">Using this dataset</h2>
                 <div class="pl-md-5">
                     <p>You can load this dataset with 2 lines of code if you already have Foundry set up. If you need to
-                        set up Foundry, check out our <a href="https://github.com/MLMI2-CSSI/foundry/tree/main/examples"
+                        set up Foundry, check out our <a class="red--text text--lighten-3" href="https://github.com/MLMI2-CSSI/foundry/tree/main/examples"
                             target="blank">example notebooks</a> and <a
-                            href="https://ai-materials-and-chemistry.gitbook.io/foundry/v/docs/"
+                            class="red--text text--lighten-3" href="https://ai-materials-and-chemistry.gitbook.io/foundry/v/docs/"
                             target="blank">documentation</a> for how to get started.</p>
 
                     <vue-code-highlight language="python">
