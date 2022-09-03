@@ -110,11 +110,11 @@ export default {
                 console.log(res)
                 for (let i = 0; i < res.data.gmeta.length; i++) {
                     // TODO, add more data into the view object for display
-                    var creators = res.data.gmeta[0].entries[0].content.dc.creators
+                    var creators = res.data.gmeta[i].entries[0].content.dc.creators
                     var authors = []
 
-                    for (let i = 0; i < creators.length; i++) {
-                        authors.push(creators[i].creatorName)
+                    for (let j = 0; j < creators.length; j++) {
+                        authors.push(creators[j].creatorName)
                     }
 
                     self.items.push({
