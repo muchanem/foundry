@@ -27,7 +27,8 @@
         </a>
       </v-card>
       <v-card elevation="3" outlined class="mx-auto col-md-5 col-12 my-6 text-center">
-        <a href="https://ai-materials-and-chemistry.gitbook.io/foundry/publishing/publishing-datasets" target="blank" class="text-decoration-none">
+        <a href="https://ai-materials-and-chemistry.gitbook.io/foundry/publishing/publishing-datasets" target="blank"
+          class="text-decoration-none">
           <h1 class="display-2"><i class="mdi mdi-chart-bar-stacked red--text text--lighten-3"></i></h1>
 
           <v-card-title class="justify-center grey--text text--darken-4">Add your dataset</v-card-title>
@@ -162,6 +163,24 @@ X,y = f.load_data()
         </p>
       </v-sheet>
     </v-row>
+    <v-footer dark padless class="col-12 mx-0 px-0 mt-10">
+      <v-card flat tile class="col-12 indigo lighten-1 white--text text-center">
+        <v-card-text class="col-md-8 col-11">
+
+        </v-card-text>
+
+        <v-card-text class="white--text pt-0 col-md-8 col-11 mx-auto text-body-1">
+          <v-icon class="pb-3">mdi-arm-flex</v-icon> Powered by <a class="red--text text--lighten-4 font-weight-bold" href="https://materialsdatafacility.org/" target="blank">MDF</a> and <a
+          class="red--text text--lighten-4 font-weight-bold" href="https://www.globus.org/" target="blank">Globus</a>.
+        </v-card-text>
+
+        <v-divider></v-divider>
+
+        <v-card-text class="white--text">
+          {{ new Date().getFullYear() }} — <strong>Foundry</strong>
+        </v-card-text>
+      </v-card>
+    </v-footer>
 
   </div>
 </template>
