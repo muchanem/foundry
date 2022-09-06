@@ -164,7 +164,7 @@ X,y = f.load_data()
       </v-sheet>
     </v-row>
     <v-footer padless color="white" class="col-12 mx-0 px-0 mt-10">
-      <v-sheet color="indigo lighten-2" rounded class="mx-auto text-center mt-10 py-3 col-12">
+      <v-sheet color="indigo lighten-2" elevation="12" class="mx-auto text-center mt-10 pb-3 pt-10 col-12">
         <v-sheet rounded="xl" color="white" class="col-md-9 col-11 mx-auto">
           <img alt="logo" src="../assets/logo_UC.png" class="px-8" />
           <img alt="logo" src="../assets/logo_UW.png" class="px-8" />
