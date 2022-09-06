@@ -63,7 +63,7 @@ X,y = f.load_data()
           <a class="text-decoration-none"
             href="https://colab.research.google.com/github/MLMI2-CSSI/foundry/blob/main/examples/dendrite-segmentation/dendrite_segmentation.ipynb"
             target="blank">
-            <v-btn color="red--text text--lighten-2 col-12 col-md-10 col-lg-8">
+            <v-btn color="red lighten-2 white--text col-12 col-md-10 col-lg-8">
               Run this in Google Colab
             </v-btn>
           </a>
