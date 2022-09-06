@@ -171,10 +171,14 @@ X,y = f.load_data()
           <img alt="logo" src="../assets/logo_UW.png" class="px-8" />
           <img alt="logo" src="../assets/logo_NSF.png" class="px-8" />
           <img alt="logo" src="../assets/logo_ANL.png" class="px-8" />
+          <p class="pt-5 col-11 mx-auto font-weight-light indigo--text">This work was supported by the National Science
+          Foundation under NSF Award Number: 1931306 "Collaborative Research: Framework: Machine Learning Materials
+          Innovation Infrastructure".</p>
         </v-sheet>
+        
 
 
-        <v-card-text class="white--text pt-3 col-md-8 col-11 mx-auto text-body-1">
+        <v-card-text class="white--text pt-3  mx-auto text-body-1">
           <v-icon class="pb-3">mdi-arm-flex</v-icon> Powered by <a class="red--text text--lighten-4 font-weight-bold"
             href="https://materialsdatafacility.org/" target="blank">MDF</a> and <a
             class="red--text text--lighten-4 font-weight-bold" href="https://www.globus.org/" target="blank">Globus</a>.
