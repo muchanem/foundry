@@ -163,33 +163,27 @@ X,y = f.load_data()
         </p>
       </v-sheet>
     </v-row>
-    <v-footer dark padless class="col-12 mx-0 px-0 mt-10">
-      <v-card flat tile class="col-12 indigo lighten-1 white--text text-center">
-        <v-sheet color="indigo lighten-5" rounded class="mx-auto text-center mt-10 py-3 col-11">
-
-          <img alt="logo" src="../assets/logo_UC.png" class="px-8" />
-          <img alt="logo" src="../assets/logo_UW.png" class="px-8" />
-          <img alt="logo" src="../assets/logo_NSF.png" class="px-8" />
-          <img alt="logo" src="../assets/logo_ANL.png" class="px-8" />
-          <p class="pt-5 col-11 mx-auto font-weight-light indigo--text">This work was supported by the National Science
+    <v-footer padless color="white" class="col-12 mx-0 px-0 mt-10">
+      <v-sheet color="indigo lighten-5" rounded class="mx-auto text-center mt-10 py-3 col-12">
+        <img alt="logo" src="../assets/logo_UC.png" class="px-8" />
+        <img alt="logo" src="../assets/logo_UW.png" class="px-8" />
+        <img alt="logo" src="../assets/logo_NSF.png" class="px-8" />
+        <img alt="logo" src="../assets/logo_ANL.png" class="px-8" />
+        <p class="pt-5 col-md-8 col-11 mx-auto font-weight-light indigo--text">This work was supported by the National Science
           Foundation under NSF Award Number: 1931306 "Collaborative Research: Framework: Machine Learning Materials
           Innovation Infrastructure".</p>
-        </v-sheet>
-        
-
-
-        <v-card-text class="white--text pt-3  mx-auto text-body-1">
-          <v-icon class="pb-3">mdi-arm-flex</v-icon> Powered by <a class="red--text text--lighten-4 font-weight-bold"
+        <v-card-text class="indigo--text pt-3  mx-auto text-body-1">
+          <v-icon color="indigo" class="pb-3">mdi-arm-flex</v-icon> Powered by <a class="red--text text--lighten-3 font-weight-bold"
             href="https://materialsdatafacility.org/" target="blank">MDF</a> and <a
-            class="red--text text--lighten-4 font-weight-bold" href="https://www.globus.org/" target="blank">Globus</a>.
+            class="red--text text--lighten-3 font-weight-bold" href="https://www.globus.org/" target="blank">Globus</a>.
         </v-card-text>
 
-        <v-divider></v-divider>
+        <v-divider class="mx-auto" width="90%" color="indigo lighten-1"></v-divider>
 
-        <v-card-text class="white--text">
+        <v-card-text class="indigo--text">
           {{ new Date().getFullYear() }} — <strong>Foundry</strong>
         </v-card-text>
-      </v-card>
+      </v-sheet>
     </v-footer>
 
   </div>
