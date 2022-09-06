@@ -163,15 +163,23 @@ X,y = f.load_data()
         </p>
       </v-sheet>
     </v-row>
+    <v-divider class="mt-5"></v-divider>
+    <div class="mx-auto col-12 text-center pt-10 mt-10">
+     
+      <img alt="logo" src="../assets/logo_UC.png" class="px-4" />
+      <img alt="logo" src="../assets/logo_UW.png" class="px-4" />
+      <img alt="logo" src="../assets/logo_NSF.png" class="px-4" />
+      <img alt="logo" src="../assets/logo_ANL.png" class="px-4" />
+    </div>
     <v-footer dark padless class="col-12 mx-0 px-0 mt-10">
       <v-card flat tile class="col-12 indigo lighten-1 white--text text-center">
-        <v-card-text class="col-md-8 col-11">
 
-        </v-card-text>
 
-        <v-card-text class="white--text pt-0 col-md-8 col-11 mx-auto text-body-1">
-          <v-icon class="pb-3">mdi-arm-flex</v-icon> Powered by <a class="red--text text--lighten-4 font-weight-bold" href="https://materialsdatafacility.org/" target="blank">MDF</a> and <a
-          class="red--text text--lighten-4 font-weight-bold" href="https://www.globus.org/" target="blank">Globus</a>.
+
+        <v-card-text class="white--text pt-3 col-md-8 col-11 mx-auto text-body-1">
+          <v-icon class="pb-3">mdi-arm-flex</v-icon> Powered by <a class="red--text text--lighten-4 font-weight-bold"
+            href="https://materialsdatafacility.org/" target="blank">MDF</a> and <a
+            class="red--text text--lighten-4 font-weight-bold" href="https://www.globus.org/" target="blank">Globus</a>.
         </v-card-text>
 
         <v-divider></v-divider>
