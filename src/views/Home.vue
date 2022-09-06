@@ -17,23 +17,24 @@
     <!-- middle content -->
     <v-row class="col-md-8 mx-auto col-12 mt-5 mb-8">
       <v-card elevation="3" outlined class="mx-auto col-md-5 col-12 my-6 text-center">
-        <a href="https://ai-materials-and-chemistry.gitbook.io/foundry/publishing/publishing-datasets" target="blank">
-          <h1 class="display-2"><i class="mdi mdi-chart-bar-stacked red--text text--lighten-3"></i></h1>
-        </a>
-        <v-card-title class="justify-center">Add your dataset</v-card-title>
-        <v-card-text>
-          We host data from a variety of scientific domains and make it easy to share and use.
-        </v-card-text>
-      </v-card>
-
-      <v-card elevation="3" outlined class="mx-auto col-md-5 col-12 my-6 text-center">
-        <a href="#/datasets">
+        <a href="#/datasets" class="text-decoration-none">
           <h1 class="display-2"><i class="mdi mdi-archive-search red--text text--lighten-3"></i></h1>
+
+          <v-card-title class="justify-center grey--text text--darken-4">Browse Datasets</v-card-title>
+          <v-card-text class="grey--text text--darken-1">
+            Find the data you're looking for! See all the Foundry datasets and get started.
+          </v-card-text>
         </a>
-        <v-card-title class="justify-center">Browse Datasets</v-card-title>
-        <v-card-text>
-          Find the data you're looking for! See all the Foundry datasets and get started.
-        </v-card-text>
+      </v-card>
+      <v-card elevation="3" outlined class="mx-auto col-md-5 col-12 my-6 text-center">
+        <a href="https://ai-materials-and-chemistry.gitbook.io/foundry/publishing/publishing-datasets" target="blank" class="text-decoration-none">
+          <h1 class="display-2"><i class="mdi mdi-chart-bar-stacked red--text text--lighten-3"></i></h1>
+
+          <v-card-title class="justify-center grey--text text--darken-4">Add your dataset</v-card-title>
+          <v-card-text class="grey--text text--darken-1">
+            We host data from a variety of scientific domains and make it easy to share and use.
+          </v-card-text>
+        </a>
       </v-card>
     </v-row>
 
@@ -62,7 +63,7 @@ X,y = f.load_data()
           <a class="text-decoration-none"
             href="https://colab.research.google.com/github/MLMI2-CSSI/foundry/blob/main/examples/dendrite-segmentation/dendrite_segmentation.ipynb"
             target="blank">
-            <v-btn color="red--text text--lighten-2 col-12 col-md-10 col-lg-8">
+            <v-btn color="red lighten-2 white--text col-12 col-md-10 col-lg-8">
               Run this in Google Colab
             </v-btn>
           </a>
@@ -149,11 +150,13 @@ X,y = f.load_data()
         </p>
         <p class="col-md-11 col-12 mx-auto white--text font-weight-medium">
           Check out our
-          <a class="red--text text--lighten-4" href="https://ai-materials-and-chemistry.gitbook.io/foundry/v/docs/" target="blank">
+          <a class="red--text text--lighten-4" href="https://ai-materials-and-chemistry.gitbook.io/foundry/v/docs/"
+            target="blank">
             documentation</a>
-           to see how easy it is to use Foundry, and follow our
-          <a class="red--text text--lighten-4" href="https://github.com/MLMI2-CSSI/foundry/tree/main/examples" target="blank">
-            
+          to see how easy it is to use Foundry, and follow our
+          <a class="red--text text--lighten-4" href="https://github.com/MLMI2-CSSI/foundry/tree/main/examples"
+            target="blank">
+
             examples</a>
           to do it all yourself.
         </p>

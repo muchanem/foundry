@@ -30,8 +30,8 @@
       <v-spacer class="d-none d-md-flex"></v-spacer>
 
       <v-toolbar-items class="d-none d-md-flex" v-for="item in items"
-        :key="item.title" :to="item.to" link>
-        <a :href="item.to" class="text-decoration-none indigo--text text--darken-1 ">
+        :key="item.title">
+        <a :href="item.to" class="text-decoration-none indigo--text text--darken-1" :target="item.target">
           <v-toolbar-title class="mx-4 mt-4 text-body-1">{{ item.title }}</v-toolbar-title>
         </a>
       </v-toolbar-items>
@@ -49,10 +49,10 @@ export default {
   data: () => ({
     drawer: false,
     items: [
-      { title: 'Home', icon: 'mdi-home', to: '/' },
-      { title: 'Datasets', icon: 'mdi-magnify', to: '#/datasets' },
-      { title: 'Documentation', icon: 'mdi-file-document-multiple-outline', to: 'https://ai-materials-and-chemistry.gitbook.io/foundry/v/docs/' },
-      { title: 'Examples', icon: 'mdi-rocket-launch', to: `https://github.com/MLMI2-CSSI/foundry/tree/main/examples` }
+      { title: 'Home', icon: 'mdi-home', to: '/', target:'' },
+      { title: 'Datasets', icon: 'mdi-magnify', to: '#/datasets', target:'' },
+      { title: 'Documentation', icon: 'mdi-file-document-multiple-outline', to: 'https://ai-materials-and-chemistry.gitbook.io/foundry/v/docs/', target:'blank' },
+      { title: 'Examples', icon: 'mdi-rocket-launch', to: `https://github.com/MLMI2-CSSI/foundry/tree/main/examples`, target:'blank' }
     ]
   }),
 }
