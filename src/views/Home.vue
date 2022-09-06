@@ -22,7 +22,7 @@
 
           <v-card-title class="justify-center grey--text text--darken-4">Browse Datasets</v-card-title>
           <v-card-text class="grey--text text--darken-1">
-            Find the data you're looking for! See all the Foundry datasets and get started.
+            Find the data you're looking for. See all the Foundry datasets and get started.
           </v-card-text>
         </a>
       </v-card>
