@@ -165,7 +165,7 @@ X,y = f.load_data()
     </v-row>
     <v-footer dark padless class="col-12 mx-0 px-0 mt-10">
       <v-card flat tile class="col-12 indigo lighten-1 white--text text-center">
-        <v-sheet color="indigo lighten-5" rounded class="mx-auto text-center mt-10 py-3 col-9">
+        <v-sheet color="indigo lighten-5" rounded class="mx-auto text-center mt-10 py-3 col-11">
 
           <img alt="logo" src="../assets/logo_UC.png" class="px-8" />
           <img alt="logo" src="../assets/logo_UW.png" class="px-8" />
