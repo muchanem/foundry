@@ -148,8 +148,8 @@ res = f.load_data(globus=False)
                     </v-simple-table>
                 </div>
                 <h2>Publications</h2>
-                <div class="pl-md-5 mb-10">
-                    <v-card elevation="3" outlined class="mx-auto col-md-5 col-12 my-6"
+                <div class="pl-md-5 mb-10 mx-auto col-md-9 col-12">
+                    <v-card elevation="3" outlined class=" my-6"
                         v-for="item in dataset.dc.titles" :key="item.title">
                         <v-card-title style="word-break: keep-all;">{{ item.title }}</v-card-title>
                     </v-card>
