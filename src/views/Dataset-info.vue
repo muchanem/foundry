@@ -69,21 +69,27 @@ res = f.load_data(globus=False)
                      
  </pre>
                     </vue-code-highlight>
-                
+
                     <p>You can load this dataset with 2 lines of code if you already have Foundry set up. If you need to
                         set up Foundry, check out our <a class="red--text text--lighten-3"
                             href="https://github.com/MLMI2-CSSI/foundry/tree/main/examples" target="blank">example
                             notebooks</a> and <a class="red--text text--lighten-3"
                             href="https://ai-materials-and-chemistry.gitbook.io/foundry/v/docs/"
                             target="blank">documentation</a> for how to get started.</p>
-                            <v-alert dense border="left" type="info" color="indigo lighten-2">
-                        This code may change depending on whether or not you're using Globus. Look at our <a class="red--text text--lighten-4"
+                    <v-alert dense border="left" type="info" color="indigo lighten-2">
+                        This code may change depending on whether or not you're using Globus. Look at our <a
+                            class="red--text text--lighten-4"
                             href="https://ai-materials-and-chemistry.gitbook.io/foundry/examples#loading-datasets"
                             target="blank">documentation</a> to make sure you are set up properly.
                     </v-alert>
 
                 </div>
-
+                <div v-if="dataset.dc.descriptions">
+                    <h2 class="mt-6 mb-2">Description</h2>
+                    <v-responsive class="overflow-y-auto pl-md-5" max-height="200">
+                        {{ dataset.dc.descriptions[0].description }}
+                    </v-responsive>
+                </div>
                 <h2 class="mt-6 mb-2">Metadata associated with this dataset</h2>
                 <div class="pl-md-5">
                     <h3>Keys</h3>
