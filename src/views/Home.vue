@@ -171,10 +171,14 @@ X,y = f.load_data()
           <img alt="logo" src="../assets/logo_NSF.png" class="px-8" />
           <img alt="logo" src="../assets/logo_ANL.png" class="px-8" />
         </v-sheet>
-        <p class="pt-5 col-md-8 col-11 mx-auto font-weight-light white--text">This work was supported by the National
+        <p class="pt-5 col-md-8 col-11 mx-auto font-weight-light white--text">This work was supported by the <a class="red--text text--lighten-4" target="blank" href="https://www.nsf.gov/">National
           Science
-          Foundation under NSF Award Number: 1931306 "Collaborative Research: Framework: Machine Learning Materials
+          Foundation</a> under NSF Award Number: 1931306 "Collaborative Research: Framework: Machine Learning Materials
           Innovation Infrastructure".</p>
+        <p class=" col-md-8 col-11 mx-auto font-weight-light white--text">This work was performed under financial
+          assistance award 70NANB14H012 from U.S. Department of Commerce, National Institute of Standards and Technology
+          as part of the <a class="red--text text--lighten-4" href="https://chimad.northwestern.edu/" target="blank">Center for Hierarchical Material
+            Design (CHiMaD)</a>.</p>
         <v-card-text class="white--text pt-3  mx-auto text-body-1">
           <v-icon color="white" class="pb-3">mdi-arm-flex</v-icon> Powered by <a
             class="red--text text--lighten-4 font-weight-bold" href="https://materialsdatafacility.org/"
