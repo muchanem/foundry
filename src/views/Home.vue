@@ -175,7 +175,6 @@ import "vue-code-highlight/themes/prism-tomorrow.css";
 import "vue-code-highlight/themes/window.css";
 import 'prism-es6/components/prism-markup-templating';
 import 'prism-es6/components/prism-python';
-import VueMeta from 'vue-meta'
 
 export default {
   name: 'Home',
@@ -186,14 +185,16 @@ export default {
     meta: [
       // Twitter Card
       { name: 'twitter:card', content: 'summary' },
+      { name: 'twitter:site', content:'@BenBlaiszik'},
       { name: 'twitter:title', content: 'Foundry' },
       { name: 'twitter:description', content: 'ML-ready datasets for materials science and chemistry' },
       // image must be an absolute path
       { name: 'twitter:image', content: 'https://foundry-ml.org/img/logo-full.ec32661a.png' },
+
       // Facebook OpenGraph
+      { property: 'og:type', content: 'article' },
       { property: 'og:title', content: 'Foundry' },
       { property: 'og:site_name', content: 'Vue Example' },
-      { property: 'og:type', content: 'website' },
       { property: 'og:image', content: 'https://foundry-ml.org/img/logo-full.ec32661a.png' },
       { property: 'og:description', content: 'ML-ready datasets for materials science and chemistry' }
     ]
