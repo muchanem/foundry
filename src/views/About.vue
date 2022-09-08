@@ -18,7 +18,7 @@
         We believe Accessibility, Community, and Collaboration are the keys to accelerating research.
       </h2>
       <v-row class="mt-8">
-        <v-sheet rounded="xl" color="indigo lighten-5" class="col-md-3 col-11 mx-auto pa-5 mt-2" elevation="5">
+        <v-sheet rounded="xl" color="indigo lighten-5" class="col-md-3 col-11 mx-auto pa-5 mt-5" elevation="5">
           <h3 class="mb-4 text-center indigo--text">Accessibility</h3>
           <p>
             Foundry simplifies your workflow by hosting large interpretable
@@ -28,7 +28,7 @@
             been easier.
           </p>
         </v-sheet>
-        <v-sheet rounded="xl" color="red lighten-5" class="col-md-3 col-11 mx-auto pa-5 mt-2" elevation="5">
+        <v-sheet rounded="xl" color="red lighten-5" class="col-md-3 col-11 mx-auto pa-5 mt-5" elevation="5">
           <h3 class="mb-4 text-center red--text text--lighten-2">Community</h3>
           <p>
             We strive to connect like-minded people to drive research forward.
@@ -38,7 +38,7 @@
             our community.
           </p>
         </v-sheet>
-        <v-sheet rounded="xl" color="indigo lighten-5" class="col-md-3 col-11 mx-auto pa-5 mt-2" elevation="5">
+        <v-sheet rounded="xl" color="indigo lighten-5" class="col-md-3 col-11 mx-auto pa-5 mt-5" elevation="5">
           <h3 class="mb-4 text-center indigo--text">Collaboration</h3>
           <p>
             Sharing data and models is more important now than ever. As the
@@ -59,7 +59,7 @@
     </h2>
     <v-row>
       <v-card class="mx-auto mt-5" max-width="344" v-for="member in team" :key="member.name">
-        <v-img src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg" height="200px"></v-img>
+        <v-img :src="member.img" height="200px"></v-img>
 
         <v-card-title>
           {{ member.name }}
@@ -82,9 +82,9 @@ export default {
   name: 'About',
   data: () => ({
     team: [
-      { name: 'Ben', institution: 'meow' },
-      { name: 'Ari', institution: 'hi' },
-      { name: 'KJ', institution: 'no' }]
+      { name: 'Ben', institution: 'meow', img:'https://cdn.vuetifyjs.com/images/cards/sunshine.jpg' },
+      { name: 'Ari', institution: 'hi', img:'https://cdn.vuetifyjs.com/images/cards/sunshine.jpg' },
+      { name: 'KJ', institution: 'no', img:'https://cdn.vuetifyjs.com/images/cards/sunshine.jpg' }]
   }),
 }
 </script>
