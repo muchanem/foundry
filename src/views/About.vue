@@ -2,20 +2,20 @@
   <div class="about">
     <!-- "We are Foundry" section-->
     <v-sheet class="text-center col-12 py-12" color="indigo lighten-2" elevation="12">
-        <h1 class="text-h2 col-sm-10 col-12 mx-auto white--text mt-10">
-          We are Foundry
-        </h1>
-        <h2 class="font-weight-regular blue-grey--text text--lighten-5 mb-12">
-          We make using and sharing models and datasets easy
-        </h2>
-    
+      <h1 class="text-h2 col-sm-10 col-12 mx-auto white--text mt-10">
+        We are Foundry
+      </h1>
+      <h2 class="font-weight-regular blue-grey--text text--lighten-5 mb-12">
+        We make using and sharing models and datasets easy
+      </h2>
+
     </v-sheet>
     <!-- End of "We are Foundry" section -->
 
     <!-- Middle explaination section-->
     <div class="mt-12 px-md-10 px-1">
-      <h2 class="text-center font-weight-regular my-12">
-        We believe Accessibility, Community, and Collaboration are the keys to accelerating research.
+      <h2 class="text-center font-weight-regular mt-12 mb-12 col-md-7 mx-auto">
+        We believe Accessibility, Reproducibility, and Collaboration are the keys to accelerating research.
       </h2>
       <v-row class="mt-8">
         <v-sheet rounded="xl" color="indigo lighten-5" class="col-md-3 col-11 mx-auto pa-5 mt-5" elevation="5">
@@ -29,21 +29,17 @@
           </p>
         </v-sheet>
         <v-sheet rounded="xl" color="red lighten-5" class="col-md-3 col-11 mx-auto pa-5 mt-5" elevation="5">
-          <h3 class="mb-4 text-center red--text text--lighten-2">Community</h3>
+          <h3 class="mb-4 text-center red--text text--lighten-2">Reproducibility</h3>
           <p>
-            We strive to connect like-minded people to drive research forward.
-            Whether you're a scientist who would like to use machine learning
-            but doesn't know where to start, or a software engineer looking to
-            apply your machine learning knowledge, we have a space for you in
-            our community.
+            The reproducibility crisis, an ongoing crisis in the scientific community in which many studies are
+            difficult or impossible to replicate or reproduce. Foundry makes replicating work almost trivial.
           </p>
         </v-sheet>
         <v-sheet rounded="xl" color="indigo lighten-5" class="col-md-3 col-11 mx-auto pa-5 mt-5" elevation="5">
           <h3 class="mb-4 text-center indigo--text">Collaboration</h3>
           <p>
-            Sharing data and models is more important now than ever. As the
-            reproducibility crisis in science continues to limit research, we
-            see Foundry as the ultimate collaborative tool to combat it. We
+            Sharing data and models can be a huge pain point when these files are too large to share easily in common
+            infrastructures. Foundry’s infrastructure is built with this in mind. We
             host large datasets that can be loaded from anywhere and models
             that are run on our service so there are no computing power
             requirements for you.
@@ -82,9 +78,9 @@ export default {
   name: 'About',
   data: () => ({
     team: [
-      { name: 'Ben', institution: 'meow', img:'https://cdn.vuetifyjs.com/images/cards/sunshine.jpg' },
-      { name: 'Ari', institution: 'hi', img:'https://cdn.vuetifyjs.com/images/cards/sunshine.jpg' },
-      { name: 'KJ', institution: 'no', img:'https://cdn.vuetifyjs.com/images/cards/sunshine.jpg' }]
+      { name: 'Ben', institution: 'meow', img: 'https://cdn.vuetifyjs.com/images/cards/sunshine.jpg' },
+      { name: 'Ari', institution: 'hi', img: 'https://cdn.vuetifyjs.com/images/cards/sunshine.jpg' },
+      { name: 'KJ', institution: 'no', img: 'https://cdn.vuetifyjs.com/images/cards/sunshine.jpg' }]
   }),
 }
 </script>
