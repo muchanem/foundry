@@ -1,15 +1,14 @@
 <template>
   <div class="about">
     <!-- "We are Foundry" section-->
-    <v-sheet class="text-center py-10 col-12 py-12" color="red lighten-4" elevation="12">
-      <v-sheet rounded="xl" color="red lighten-5" class="col-md-9 col-11 mx-auto mt-12 py-4" elevation="5">
-        <h1 class="text-h2 col-sm-10 col-12 mx-auto ">
+    <v-sheet class="text-center col-12 py-12" color="indigo lighten-2" elevation="12">
+        <h1 class="text-h2 col-sm-10 col-12 mx-auto white--text mt-10">
           We are Foundry
         </h1>
-        <h2 class="font-weight-regular indigo--text">
+        <h2 class="font-weight-regular blue-grey--text text--lighten-5 mb-12">
           We make using and sharing models and datasets easy
         </h2>
-      </v-sheet>
+    
     </v-sheet>
     <!-- End of "We are Foundry" section -->
 
@@ -19,8 +18,8 @@
         We believe Accessibility, Community, and Collaboration are the keys to accelerating research.
       </h2>
       <v-row class="mt-8">
-        <v-sheet rounded="xl" class="col-md-3 col-11 mx-auto pa-5 mt-2" elevation="5">
-          <h3 class="mb-4 text-center">Accessibility</h3>
+        <v-sheet rounded="xl" color="indigo lighten-5" class="col-md-3 col-11 mx-auto pa-5 mt-2" elevation="5">
+          <h3 class="mb-4 text-center indigo--text">Accessibility</h3>
           <p>
             Foundry simplifies your workflow by hosting large interpretable
             datasets and ready-to-use models. We remove common barriers for
@@ -29,8 +28,8 @@
             been easier.
           </p>
         </v-sheet>
-        <v-sheet rounded="xl" class="col-md-3 col-11 mx-auto pa-5 mt-2" elevation="5">
-          <h3 class="mb-4 text-center">Community</h3>
+        <v-sheet rounded="xl" color="red lighten-5" class="col-md-3 col-11 mx-auto pa-5 mt-2" elevation="5">
+          <h3 class="mb-4 text-center red--text text--lighten-2">Community</h3>
           <p>
             We strive to connect like-minded people to drive research forward.
             Whether you're a scientist who would like to use machine learning
@@ -39,8 +38,8 @@
             our community.
           </p>
         </v-sheet>
-        <v-sheet rounded="xl" class="col-md-3 col-11 mx-auto pa-5 mt-2" elevation="5">
-          <h3 class="mb-4 text-center">Collaboration</h3>
+        <v-sheet rounded="xl" color="indigo lighten-5" class="col-md-3 col-11 mx-auto pa-5 mt-2" elevation="5">
+          <h3 class="mb-4 text-center indigo--text">Collaboration</h3>
           <p>
             Sharing data and models is more important now than ever. As the
             reproducibility crisis in science continues to limit research, we
