@@ -95,6 +95,7 @@ export default {
     items: [
       { title: 'Home', icon: 'mdi-home', to: '/', target: '' },
       { title: 'Datasets', icon: 'mdi-magnify', to: '#/datasets', target: '' },
+      { title: 'About', icon: 'mdi-chat-question', to: '#/about', target: '' },
       { title: 'Documentation', icon: 'mdi-file-document-multiple-outline', to: 'https://ai-materials-and-chemistry.gitbook.io/foundry/v/docs/', target: 'blank' },
       { title: 'Examples', icon: 'mdi-rocket-launch', to: `https://github.com/MLMI2-CSSI/foundry/tree/main/examples`, target: 'blank' }
     ]
