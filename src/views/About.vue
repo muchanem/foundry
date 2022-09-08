@@ -1,22 +1,15 @@
 <template>
   <div class="about">
     <!-- "We are Foundry" section-->
-
       <h1 >
         We are Foundry
       </h1>
-  
-
     <!-- End of "We are Foundry" section -->
 
-    <!-- Section below "We Are Foundry" section-->
-
+    <!-- Middle explaination section-->
     <h2 class="fw-light">
       We make using and sharing ML models and datasets easy.
     </h2>
-
-    <section>
-
       <h2 class="mb-4">Accessibility</h2>
       <p>
         Foundry simplifies your workflow by hosting large interpretable
@@ -25,12 +18,6 @@
         research. Reproducing models and using large datasets has never
         been easier.
       </p>
-
-    </section>
-
-    <section>
-
-
       <h2 class="mb-4">Community</h2>
       <p>
         We strive to connect like-minded people to drive research forward.
@@ -39,11 +26,6 @@
         apply your machine learning knowledge, we have a space for you in
         our community.
       </p>
-
-    </section>
-
-    <section>
-
       <h2 class="mb-4">Collaboration</h2>
       <p>
         Sharing data and models is more important now than ever. As the
@@ -55,14 +37,10 @@
       </p>
 
 
-    </section>
-
     <!-- TEAM SECTION -->
-    <!-- Decided on email, github, linkedin, personal website (if available) -->
     <h2 class="display-4 text-center mt-5 py-5">
       Team
     </h2>
 
-    
   </div>
 </template>
