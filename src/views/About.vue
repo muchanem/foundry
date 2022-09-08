@@ -7,7 +7,7 @@
           We are Foundry
         </h1>
         <h2 class="font-weight-regular indigo--text">
-          We make using and sharing models and datasets easy.
+          We make using and sharing models and datasets easy
         </h2>
       </v-sheet>
     </v-sheet>
@@ -19,7 +19,7 @@
         We believe Accessibility, Community, and Collaboration are the keys to accelerating research.
       </h2>
       <v-row class="mt-8">
-        <v-sheet rounded="xl" class="col-md-3 col-11 mx-auto pa-5" elevation="5">
+        <v-sheet rounded="xl" class="col-md-3 col-11 mx-auto pa-5 mt-2" elevation="5">
           <h3 class="mb-4 text-center">Accessibility</h3>
           <p>
             Foundry simplifies your workflow by hosting large interpretable
@@ -29,7 +29,7 @@
             been easier.
           </p>
         </v-sheet>
-        <v-sheet rounded="xl" class="col-md-3 col-11 mx-auto pa-5" elevation="5">
+        <v-sheet rounded="xl" class="col-md-3 col-11 mx-auto pa-5 mt-2" elevation="5">
           <h3 class="mb-4 text-center">Community</h3>
           <p>
             We strive to connect like-minded people to drive research forward.
@@ -39,7 +39,7 @@
             our community.
           </p>
         </v-sheet>
-        <v-sheet rounded="xl" class="col-md-3 col-11 mx-auto pa-5" elevation="5">
+        <v-sheet rounded="xl" class="col-md-3 col-11 mx-auto pa-5 mt-2" elevation="5">
           <h3 class="mb-4 text-center">Collaboration</h3>
           <p>
             Sharing data and models is more important now than ever. As the
@@ -58,6 +58,35 @@
     <h2 class="text-center mt-12 py-5">
       Team
     </h2>
+    <v-row>
+      <v-card class="mx-auto mt-5" max-width="344" v-for="member in team" :key="member.name">
+        <v-img src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg" height="200px"></v-img>
+
+        <v-card-title>
+          {{ member.name }}
+        </v-card-title>
+
+        <v-card-subtitle>
+          {{ member.institution }}
+        </v-card-subtitle>
+
+
+      </v-card>
+    </v-row>
 
   </div>
 </template>
+
+<script>
+
+export default {
+  name: 'About',
+  data: () => ({
+    team: [
+      { name: 'Ben', institution: 'meow' },
+      { name: 'Ari', institution: 'hi' },
+      { name: 'KJ', institution: 'no' }]
+  }),
+}
+</script>
+  
