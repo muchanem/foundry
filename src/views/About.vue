@@ -6,7 +6,8 @@
         We are Foundry
       </h1>
       <h2 class="font-weight-regular blue-grey--text text--lighten-5 mb-12">
-        We make using and sharing models and datasets easy
+        Simplifying your workflow
+ 
       </h2>
 
     </v-sheet>
