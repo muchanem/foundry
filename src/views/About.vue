@@ -1,32 +1,6 @@
 <template>
   <div class="about">
     <!-- "We are Foundry" section-->
-    <!-- ORIGINAL 
-      <h1 class="display-4 col-8">
-      <div class="container">
-        <div class="row text-center">
-          <div class="col-md-6 col-8">
-            <div class="row h-100">
-              <div class="weAre foundry-pink col-sm-12 my-auto">
-                <strong
-                  >We are <span class="foundry-blue">Foundry</span></strong
-                >
-              </div>
-            </div>
-          </div>
-          <section class="col-md-1">
-            <div class="container col-sm-6 offset-sm-6">
-              <img
-                class=""
-                src="https://d3qi0qp55mx5f5.cloudfront.net/campaign/i/priority_hero/College_main.jpg?mtime=1414420540"
-              />
-            </div>
-          </section>
-        </div>
-      </div>
-    </h1>
-    -->
-    <!-- NEW VERSION -->
     <h1 class="">
       <div class="tint">
         <img
@@ -186,11 +160,7 @@
           <div class="card border-0 shadow">
             <div class="test-container">
               <div class="card-img-top test-pic">
-                <img
-                  src="../assets/headshots/ben_headshot.png"
-                  class="card-img-top test-image"
-                  alt="..."
-                />
+                
               </div>
               <div class="mx-auto test-middle">
                 <!-- Social media buttons (on hover) -->
@@ -250,12 +220,7 @@
           <div class="card border-0 shadow">
             <div class="test-container">
               <div class="card-img-top test-pic">
-                <img
-                  src="../assets/headshots/kj_headshot.png"
-                  class="card-img-top test-image"
-                  alt="..."
-                  id="zoom_from_top"
-                />
+                
               </div>
               <div class="mx-auto test-middle">
                 <!-- Social media buttons (on hover) -->
@@ -315,11 +280,7 @@
           <div class="card border-0 shadow">
             <div class="test-container">
               <div class="card-img-top test-pic">
-                <img
-                  src="../assets/headshots/ari_headshot.png"
-                  class="card-img-top test-image"
-                  alt="..."
-                />
+                
               </div>
               <div class="mx-auto test-middle">
                 <!-- Social media buttons (on hover) -->
@@ -380,12 +341,7 @@
           <div class="card border-0 shadow">
             <div class="test-container">
               <div class="card-img-top test-pic zoom_from_top">
-                <img
-                  src="https://www.harmonettesacappella.com/uploads/4/1/0/5/4105974/published/screen-shot-2018-11-05-at-8-33-26-pm_1.png?1566856223"
-                  class="card-img-top test-image"
-                  alt="..."
-                  id="zoom_from_top"
-                />
+                
               </div>
               <div class="mx-auto test-middle">
                 <!-- Social media buttons (on hover) -->
@@ -445,11 +401,7 @@
           <div class="card border-0 shadow">
             <div class="test-container">
               <div class="card-img-top test-pic">
-                <img
-                  src="../assets/headshots/zoa_headshot.png"
-                  class="card-img-top test-image zoom_from_top"
-                  alt="..."
-                />
+                
               </div>
               <div class="mx-auto test-middle">
                 <!-- Social media buttons (on hover) -->
@@ -509,11 +461,7 @@
           <div class="card border-0 shadow">
             <div class="test-container">
               <div class="card-img-top test-pic">
-                <img
-                  src="https://media-exp1.licdn.com/dms/image/C4D03AQFpW8SD-AE4RA/profile-displayphoto-shrink_200_200/0/1609700428475?e=1628726400&v=beta&t=CRURJzPh8STIk20JHHLYhOezPWPrxczu4JThbdAcfec"
-                  class="card-img-top test-image"
-                  alt="..."
-                />
+                
               </div>
               <div class="mx-auto test-middle">
                 <!-- Social media buttons (on hover) -->
@@ -582,11 +530,7 @@
           <div class="card border-0 shadow">
             <div class="test-container">
               <div class="card-img-top test-pic">
-                <img
-                  src="https://news.wisc.edu/content/uploads/2018/07/Dane-Morgan-e1532021881649.jpg"
-                  class="card-img-top test-image"
-                  alt="..."
-                />
+                
               </div>
               <div class="mx-auto test-middle">
                 <!-- Social media buttons (on hover) -->
@@ -637,11 +581,7 @@
           <div class="card border-0 shadow">
             <div class="test-container">
               <div class="card-img-top test-pic">
-                <img
-                  src="https://matmodel.engr.wisc.edu/wp-content/uploads/sites/668/2017/12/RJ_photo-e1513313351991.jpg"
-                  class="card-img-top test-image"
-                  alt="..."
-                />
+              
               </div>
               <div class="mx-auto test-middle">
                 <!-- Social media buttons (on hover) -->
@@ -693,12 +633,7 @@
           <div class="card border-0 shadow">
             <div class="test-container">
               <div class="card-img-top test-pic">
-                <img
-                  src="https://directory.engr.wisc.edu/private/includes/profilePictures/v/voyles_paul.jpg"
-                  class="card-img-top test-image"
-                  alt="..."
-                  id="zoom_from_top"
-                />
+               
               </div>
               <div class="mx-auto test-middle">
                 <!-- Social media buttons (on hover) -->
@@ -750,11 +685,7 @@
           <div class="card border-0 shadow">
             <div class="test-container">
               <div class="card-img-top test-pic">
-                <img
-                  src="https://gers.engr.wisc.edu/files/Picture/IMG_0694-e1530895632442%20-%20Lane%20Schultz.jpg"
-                  class="card-img-top test-image"
-                  alt="..."
-                />
+                
               </div>
               <div class="mx-auto test-middle">
                 <!-- Social media buttons (on hover) -->
@@ -805,12 +736,7 @@
           <div class="card border-0 shadow">
             <div class="test-container">
               <div class="card-img-top test-pic zoom_from_top">
-                <img
-                  src="https://i1.rgstatic.net/ii/profile.image/583671371292678-1516169507532_Q512/Jingrui-Wei.jpg"
-                  class="card-img-top test-image"
-                  alt="..."
-                  id="zoom_from_top"
-                />
+                
               </div>
               <div class="mx-auto test-middle">
                 <!-- Social media buttons (on hover) -->
@@ -861,11 +787,7 @@
           <div class="card border-0 shadow">
             <div class="test-container">
               <div class="card-img-top test-pic">
-                <img
-                  src="https://media-exp3.licdn.com/dms/image/C4D03AQGS6uazt1VjTQ/profile-displayphoto-shrink_100_100/0/1578847290235?e=1631750400&v=beta&t=YWmpCyzZXB7bll9RpH7wThONimDUTrnmPzyt5CLg2Q4"
-                  class="card-img-top test-image"
-                  alt="..."
-                />
+                
               </div>
               <div class="mx-auto test-middle">
                 <!-- Social media buttons (on hover) -->
