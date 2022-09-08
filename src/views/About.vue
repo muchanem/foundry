@@ -6,7 +6,7 @@
         We are Foundry
       </h1>
       <h2 class="font-weight-regular blue-grey--text text--lighten-5 mb-12">
-        Simplifying your workflow
+        Simplifying your machine learning workflow
  
       </h2>
 
