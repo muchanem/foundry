@@ -32,7 +32,7 @@
           <h3 class="mb-4 text-center red--text text--lighten-2">Reproducibility</h3>
           <p>
             The reproducibility crisis, an ongoing crisis in the scientific community in which many studies are
-            difficult or impossible to replicate or reproduce. Foundry makes replicating work almost trivial.
+            difficult or impossible to replicate or reproduce, limits research. Foundry makes replicating work almost trivial.
           </p>
         </v-sheet>
         <v-sheet rounded="xl" color="indigo lighten-5" class="col-md-3 col-11 mx-auto pa-5 mt-5" elevation="5">
