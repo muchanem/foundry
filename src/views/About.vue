@@ -7,7 +7,7 @@
       </h1>
       <h2 class="font-weight-regular blue-grey--text text--lighten-5 mb-12">
         Simplifying your machine learning workflow
- 
+
       </h2>
 
     </v-sheet>
@@ -33,7 +33,8 @@
           <h3 class="mb-4 text-center red--text text--lighten-2">Reproducibility</h3>
           <p>
             The reproducibility crisis, an ongoing crisis in the scientific community in which many studies are
-            difficult or impossible to replicate or reproduce, limits research. Foundry makes replicating work almost trivial.
+            difficult or impossible to replicate or reproduce, limits research. Foundry makes replicating work almost
+            trivial.
           </p>
         </v-sheet>
         <v-sheet rounded="xl" color="indigo lighten-5" class="col-md-3 col-11 mx-auto pa-5 mt-5" elevation="5">
@@ -79,9 +80,9 @@ export default {
   name: 'About',
   data: () => ({
     team: [
-      { name: 'Ben', institution: 'meow', img: 'https://cdn.vuetifyjs.com/images/cards/sunshine.jpg' },
-      { name: 'Ari', institution: 'hi', img: 'https://cdn.vuetifyjs.com/images/cards/sunshine.jpg' },
-      { name: 'KJ', institution: 'no', img: 'https://cdn.vuetifyjs.com/images/cards/sunshine.jpg' }]
+      { name: 'Ben Blaiszik', institution: 'University of Chicago and Argonne National Lab', img: require('.././assets/ben.jpeg') },
+      { name: 'Dane Morgan', institution: 'University of Wisconsin-Madison', img: require('.././assets/dane.jpeg') },
+      { name: 'Paul Voyles', institution: 'University of Wisconsin-Madison', img: require('.././assets/paul.jpeg') }]
   }),
 }
 </script>
