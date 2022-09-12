@@ -56,7 +56,7 @@
       Team
     </h2>
     <v-row>
-      <v-card class="mx-auto mt-5" max-width="344" v-for="member in team" :key="member.name">
+      <v-card class="mx-auto mt-5 col-md-4 col-12" max-width="344" v-for="member in team" :key="member.name">
         <v-img :src="member.img" height="200px"></v-img>
 
         <v-card-title>
@@ -81,6 +81,8 @@ export default {
   data: () => ({
     team: [
       { name: 'Ben Blaiszik', institution: 'University of Chicago and Argonne National Lab', img: require('.././assets/ben.jpeg') },
+      { name: 'Aristana Scourtas', institution: 'University of Chicago and Argonne National Lab', img: '' },
+      { name: 'KJ Schmidt', institution: 'University of Chicago and Argonne National Lab', img:'' },
       { name: 'Dane Morgan', institution: 'University of Wisconsin-Madison', img: require('.././assets/dane.jpeg') },
       { name: 'Paul Voyles', institution: 'University of Wisconsin-Madison', img: require('.././assets/paul.jpeg') }]
   }),
