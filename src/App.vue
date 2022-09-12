@@ -63,12 +63,12 @@
             Design (CHiMaD)</a>.</p>
 
 
-        <div class="mx-auto">
+        <v-sheet rounded="xl" color="white" class="col-md-6 col-11 mx-auto">
           <a href="https://materialsdatafacility.org/" target="blank"><img alt="logo" src="./assets/logo_MDF.png"
               class="px-6" /></a>
           <a href="https://globus.org/" target="blank"><img alt="logo" src="./assets/logo_globus.png"
               class="px-6" /></a>
-        </div>
+        </v-sheet>
         <v-card-text class="white--text pt-3  mx-auto text-body-1">
           <v-icon color="white" class="pb-3">mdi-arm-flex</v-icon> Powered by <a
             class="red--text text--lighten-4 font-weight-bold" href="https://materialsdatafacility.org/"
