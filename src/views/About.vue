@@ -81,15 +81,14 @@ export default {
   data: () => ({
     team: [
       { name: 'Ben Blaiszik', institution: 'University of Chicago and Argonne National Lab', img: require('.././assets/ben.jpeg') },
-      { name: 'Aristana Scourtas', institution: 'University of Chicago and Argonne National Lab', img: '' },
-      { name: 'KJ Schmidt', institution: 'University of Chicago and Argonne National Lab', img:'' },
+      { name: 'Aristana Scourtas', institution: 'University of Chicago and Argonne National Lab', img: require('.././assets/ari.jpg')  },
+      { name: 'KJ Schmidt', institution: 'University of Chicago and Argonne National Lab', img:require('.././assets/kj.jpeg')  },
       { name: 'Michael Ferris', institution: 'University of Wisconsin-Madison', img: '' },
       { name: 'Dane Morgan', institution: 'University of Wisconsin-Madison', img: require('.././assets/dane.jpeg') },
       { name: 'Paul Voyles', institution: 'University of Wisconsin-Madison', img: require('.././assets/paul.jpeg') },
       { name: 'Jingrui Wei', institution: 'University of Wisconsin-Madison', img: '' },
       { name: 'Ryan Jacobs', institution: 'University of Wisconsin-Madison', img: '' },
-      { name: 'Lane Schultz', institution: 'University of Wisconsin-Madison', img: '' },
-      { name: '', institution: 'University of Wisconsin-Madison', img: '' },]
+      { name: 'Lane Schultz', institution: 'University of Wisconsin-Madison', img: '' }]
   }),
 }
 </script>
