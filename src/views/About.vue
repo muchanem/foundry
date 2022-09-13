@@ -71,6 +71,15 @@
       </v-card>
     </v-row>
 
+    <h2 class="text-center mt-12 py-5">
+      Past Team Members
+    </h2>
+    <v-row>
+      <p class="mx-auto mt-5 col-md-3 col-5 px-2" v-for="person in past" :key="person.member">
+      {{ person.member }}
+      </p>
+    </v-row>
+
   </div>
 </template>
 
@@ -88,7 +97,12 @@ export default {
       { name: 'Paul Voyles', institution: 'University of Wisconsin-Madison', img: require('.././assets/paul.jpeg') },
       { name: 'Jingrui Wei', institution: 'University of Wisconsin-Madison', img: '' },
       { name: 'Ryan Jacobs', institution: 'University of Wisconsin-Madison', img: '' },
-      { name: 'Lane Schultz', institution: 'University of Wisconsin-Madison', img: '' }]
+      { name: 'Lane Schultz', institution: 'University of Wisconsin-Madison', img: '' }],
+      past:[
+        {member: 'Ribhav'},
+        {member: 'Zoa'},
+
+      ]
   }),
 }
 </script>
