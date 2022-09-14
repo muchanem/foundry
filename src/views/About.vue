@@ -52,24 +52,35 @@
 
 
     <!-- TEAM SECTION -->
-    <h2 class="text-center mt-12 py-5">
-      Team
-    </h2>
-    <v-row>
-      <v-card class="mx-auto mt-5 col-md-4 col-12" max-width="344" v-for="member in team" :key="member.name">
-        <v-img :src="member.img" height="200px"></v-img>
+    <div class="mx-6">
+      <h2 class="text-center mt-12 py-5">
+        Team
+      </h2>
+      <v-row>
+        <v-card class="mx-auto mt-5 col-md-4 col-12" max-width="344" v-for="member in team" :key="member.name">
+          <v-img :src="member.img" height="200px"></v-img>
 
-        <v-card-title>
-          {{ member.name }}
-        </v-card-title>
+          <v-card-title>
+            {{ member.name }}
+          </v-card-title>
 
-        <v-card-subtitle>
-          {{ member.institution }}
-        </v-card-subtitle>
+          <v-card-subtitle>
+            {{ member.institution }}
+          </v-card-subtitle>
+        </v-card>
+      </v-row>
 
-
-      </v-card>
-    </v-row>
+      <h2 class="text-center mt-12 py-5">
+        Past Team Members
+      </h2>
+      <div class="col-8 mx-auto">
+        <v-row>
+          <p class="mx-auto mt-5 col-md-3 col-5 px-2" v-for="person in past" :key="person.member">
+            {{ person.member }}
+          </p>
+        </v-row>
+      </div>
+    </div>
 
   </div>
 </template>
@@ -81,14 +92,23 @@ export default {
   data: () => ({
     team: [
       { name: 'Ben Blaiszik', institution: 'University of Chicago and Argonne National Lab', img: require('.././assets/ben.jpeg') },
-      { name: 'Aristana Scourtas', institution: 'University of Chicago and Argonne National Lab', img: require('.././assets/ari.jpg')  },
-      { name: 'KJ Schmidt', institution: 'University of Chicago and Argonne National Lab', img:require('.././assets/kj.jpeg')  },
+      { name: 'Aristana Scourtas', institution: 'University of Chicago and Argonne National Lab', img: require('.././assets/ari.jpg') },
+      { name: 'KJ Schmidt', institution: 'University of Chicago and Argonne National Lab', img: require('.././assets/kj.jpeg') },
+      { name: 'Ben Galewsky', institution: 'University of Illinois Urbana-Champaign', img: '' },
       { name: 'Michael Ferris', institution: 'University of Wisconsin-Madison', img: '' },
       { name: 'Dane Morgan', institution: 'University of Wisconsin-Madison', img: require('.././assets/dane.jpeg') },
       { name: 'Paul Voyles', institution: 'University of Wisconsin-Madison', img: require('.././assets/paul.jpeg') },
       { name: 'Jingrui Wei', institution: 'University of Wisconsin-Madison', img: '' },
       { name: 'Ryan Jacobs', institution: 'University of Wisconsin-Madison', img: '' },
-      { name: 'Lane Schultz', institution: 'University of Wisconsin-Madison', img: '' }]
+      { name: 'Doyeon Kim', institution: 'University of Wisconsin-Madison', img: '' },
+      { name: 'Lane Schultz', institution: 'University of Wisconsin-Madison', img: '' }],
+    past: [
+      { member: 'Xiang-Guo Li' },
+      { member: 'Ribhav Bose' },
+      { member: 'Zoa Katok' },
+      { member: 'Imogen Foster' },
+
+    ]
   }),
 }
 </script>
