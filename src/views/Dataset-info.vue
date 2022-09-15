@@ -83,6 +83,14 @@ res = f.load_data(globus=False)
                             target="blank">documentation</a> to make sure you are set up properly.
                     </v-alert>
 
+                    <a class="text-decoration-none"
+            :href=dataset.data_info.link
+            target="blank">
+            <v-btn color="red lighten-2 white--text col-12 col-md-10 col-lg-8">
+              Get Data with Globus
+            </v-btn>
+          </a>
+
                 </div>
                 <div v-if="dataset.dc.descriptions">
                     <h2 class="mt-6 mb-2">Description</h2>
@@ -183,9 +191,11 @@ export default {
         // Define the search endpoint and index
         var ep = 'https://search.api.globus.org/v1/index/1a57bbe5-5272-477f-9d31-343b8258b7a5/search'
 
+        console.log(this.$route.params.id)
+
         // Format the POST query for Globus search - search via mdf.source_id
         var query = {
-            "q": "(mdf.source_id:" + this.$route.params.id + ") AND (mdf.resource_type:dataset)",
+            "q": "(dc.identifier.identifier:" + this.$route.params.id + ") AND (mdf.resource_type:dataset)",
             "limit": 1,
             "advanced": true,
         }
@@ -209,7 +219,8 @@ export default {
                     authors: authors,
                     dc: res.data.gmeta[0].entries[0].content.dc,
                     foundry: res.data.gmeta[0].entries[0].content.projects.foundry,
-                    to: "/datasets/" + res.data.gmeta[0].entries[0].content.mdf.source_id
+                    to: "/datasets/" + res.data.gmeta[0].entries[0].content.mdf.source_id,
+                    data_info: res.data.gmeta[0].entries[0].content.data
                 }
                 console.log(self.dataset)
             })

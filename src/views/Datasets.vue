@@ -112,17 +112,26 @@ export default {
                     // TODO, add more data into the view object for display
                     var creators = res.data.gmeta[i].entries[0].content.dc.creators
                     var authors = []
+                    var dataset_link = ""
 
                     for (let j = 0; j < creators.length; j++) {
                         authors.push(creators[j].creatorName)
                     }
 
+                    console.log(res.data.gmeta[i].entries[0].content.dc.identifier)
+
+                    if (res.data.gmeta[i].entries[0].content.dc.identifier.identifier) {
+                        dataset_link = "/datasets/" + encodeURIComponent(res.data.gmeta[i].entries[0].content.dc.identifier.identifier)
+                    } else {
+                        dataset_link = "/datasets/" + res.data.gmeta[i].entries[0].content.mdf.source_id
+                    }
+
                     self.items.push({
-                        title: res.data.gmeta[i].entries[0].content.dc.titles[0].title,
-                        foundry: res.data.gmeta[i].entries[0].content.projects.foundry,
-                        dc: res.data.gmeta[i].entries[0].content.dc,
-                        authors: authors,
-                        to: "/datasets/" + res.data.gmeta[i].entries[0].content.mdf.source_id
+                        "title": res.data.gmeta[i].entries[0].content.dc.titles[0].title,
+                        "foundry": res.data.gmeta[i].entries[0].content.projects.foundry,
+                        "dc": res.data.gmeta[i].entries[0].content.dc,
+                        "authors": authors,
+                        "to": dataset_link
                     })
                 }
 
