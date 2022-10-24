@@ -60,7 +60,7 @@
                     <vue-code-highlight language="python">
                         <pre class="language-python">
 # Make sure you've imported and instantiated Foundry
-import Foundry from foundry-ml
+from foundry import Foundry
 f = Foundry()
 
 # Load the data here!
