@@ -7,7 +7,7 @@
       </h1>
       <v-sheet rounded="xl" elevation="20" class="col-md-6 col-11 mx-auto mt-5 py-1">
         <p class="text-subtitle-1 col-12 my-0 mx-auto indigo--text text--lighten-2 font-weight-medium">
-          Access datasets and ML models while setting industry benchmarks
+          Access ML-ready datasets while setting industry benchmarks
         </p>
       </v-sheet>
       <h1 class="text-h2 col-10 mx-auto white--text pb-12">
