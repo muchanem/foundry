@@ -57,6 +57,10 @@
                 </div>
                 <h2 class="mt-6">Using this dataset</h2>
                 <div class="pl-md-5">
+                    <div class="col-md-10 col-12">
+                        First, you'll need to install the <a href="https://pypi.org/project/foundry-ml/" class="red--text text--lighten-3" target="blank">latest version</a> of Foundry. You can do this with the command:
+                        <div class="d-block"><code>pip install foundry-ml</code></div>
+                    </div>
                     <vue-code-highlight language="python">
                         <pre class="language-python">
 # Make sure you've imported and instantiated Foundry
