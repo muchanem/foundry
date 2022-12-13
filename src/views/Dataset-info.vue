@@ -64,8 +64,8 @@ from foundry import Foundry
 f = Foundry()
 
 # Load the data here!
-f.load('{{ dataset.dc.identifier.identifier }}')
-res = f.load_data(globus=False)
+f.load('{{ dataset.dc.identifier.identifier }}', globus=False)
+res = f.load_data()
                      
  </pre>
                     </vue-code-highlight>
