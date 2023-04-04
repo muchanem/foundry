@@ -7,7 +7,7 @@
       </h1>
       <v-sheet rounded="xl" elevation="20" class="col-md-6 col-11 mx-auto mt-5 py-1">
         <p class="text-subtitle-1 col-12 my-0 mx-auto indigo--text text--lighten-2 font-weight-medium">
-          Access ML-ready datasets while setting industry benchmarks
+          Accessing ML-ready datasets just became the easiest part of your workflow
         </p>
       </v-sheet>
       <h1 class="text-h2 col-10 mx-auto white--text pb-12">
@@ -48,9 +48,9 @@
           <vue-code-highlight language="python">
             <pre class="language-python">
 
-f = f.load("foundry_stan_segmentation_v1.1")           
-X,y = f.load_data()
-</pre>
+  f = f.load("foundry_stan_segmentation_v1.1")           
+  X,y = f.load_data()
+                    </pre>
           </vue-code-highlight>
           <v-sheet rounded color="white" elevation="20">
             <img alt="dendrite segmentation data snippet" src="../assets/dendrite-seg-img.png" class="col-12 pb-3" />
@@ -58,8 +58,8 @@ X,y = f.load_data()
         </div>
         <div class="col-sm-10 col-md-6 col-12 mx-auto">
           <p>
-            Once a dataset is uploaded to Foundry, you can load it with just 2
-            lines of code.
+            Foundry-ML hosts structured, ML-ready data of any size that can be accessed programatically with our Python SDK. Once a dataset is uploaded to Foundry-ML, you can load it with just 2
+            lines of code. The data is loaded into a DataFrame and ready for analysis!
           </p>
           <a class="text-decoration-none"
             href="https://colab.research.google.com/github/MLMI2-CSSI/foundry/blob/main/examples/dendrite-segmentation/dendrite_segmentation.ipynb"
@@ -80,7 +80,9 @@ X,y = f.load_data()
         <v-col class="col-sm-10 col-md-6 col-12 mx-auto">
           <p>
             No need to spend time making sense of someone else's data. We collect information about each dataset to
-            take out any guesswork on your part. Our
+            take out any guesswork on your part.
+            Our schema requires key information for every single dataset we host, making it easy to interpret each one.
+            Our
             publishing process also includes a human review to make sure it meets our
             data standards.
           </p>
@@ -133,11 +135,53 @@ X,y = f.load_data()
     </v-row>
     <!-- end of row -->
 
-    <v-divider></v-divider>
+
+
+    <v-row class="indigo lighten-4 pt-3 px-md-10 px-1">
+      <h1 class="col-md-10 col-12 mx-auto">Created for sharing large datasets</h1>
+
+      <v-row class="mb-5 col-md-10 col-12 mx-auto">
+        <div class="col-sm-10 col-md-6 col-12 mx-auto">
+          <p>
+            Our infrastructure was built with large datasets in mind. Share data that common infrastructures (email,
+            DropBox,
+            GitHub) can't. We use <a class="indigo--text text--lighten-1 font-weight-medium" href="https://globus.org"
+              target="blank">Globus</a> to easily transfer data to anywhere you want to use it - from a laptop to a
+            supercomputer.</p>
+
+          <p>Foundry-ML is part of the <a class="indigo--text text--lighten-1 font-weight-medium"
+              href="https://materialsdatafacility.org" target="blank">Materials Data Facility</a>. MDF collects
+            high-quality scientific datasets from the community
+            and
+            makes them easy to find and use.
+
+
+            Foundry-ML datasets are a
+            subset of MDF datasets that are
+            structured and can be accessed programatically. For datasets that have less structure, or don't need to
+            be accessed programatically, consider using <a class="indigo--text text--lighten-1 font-weight-medium"
+              href="https://materialsdatafacility.org" target="blank">MDF</a> directly instead of Foundry-ML.</p>
+
+        </div>
+        <div class="col-sm-10 col-md-6 col-12 mx-auto text-center">
+          <v-sheet rounded="xl" color="white" class=" col-11 mx-auto py-5">
+            <a href="https://globus.org/" target="blank"><img alt="logo" src="../assets/logo_globus.png"
+                class="px-6 my-5" /></a>
+            <a href="https://materialsdatafacility.org/" target="blank"><img alt="logo" src="../assets/logo_MDF.png"
+                class="px-6  my-5" /></a>
+
+          </v-sheet>
+
+        </div>
+      </v-row>
+
+    </v-row>
+
+
 
     <!-- be a part of foundry section -->
 
-    <v-row class="indigo lighten-4 pt-3 pb-10">
+    <v-row class="mt-8 pt-3 pb-10">
       <v-sheet rounded color="indigo lighten-2" elevation="5" class="col-md-8 col-11 mx-auto mt-5">
         <h1 class="text-center my-3 text-h2 white--text font-weight-regular">Build Foundry With Us</h1>
         <p class="col-md-11 col-12 mx-auto white--text font-weight-medium">
