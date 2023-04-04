@@ -7,7 +7,7 @@
       </h1>
       <v-sheet rounded="xl" elevation="20" class="col-md-6 col-11 mx-auto mt-5 py-1">
         <p class="text-subtitle-1 col-12 my-0 mx-auto indigo--text text--lighten-2 font-weight-medium">
-          Access ML-ready datasets while setting industry benchmarks
+          Accessing ML-ready datasets just became the easiest part of your workflow
         </p>
       </v-sheet>
       <h1 class="text-h2 col-10 mx-auto white--text pb-12">
@@ -48,9 +48,9 @@
           <vue-code-highlight language="python">
             <pre class="language-python">
 
-f = f.load("foundry_stan_segmentation_v1.1")           
-X,y = f.load_data()
-                  </pre>
+  f = f.load("foundry_stan_segmentation_v1.1")           
+  X,y = f.load_data()
+                    </pre>
           </vue-code-highlight>
           <v-sheet rounded color="white" elevation="20">
             <img alt="dendrite segmentation data snippet" src="../assets/dendrite-seg-img.png" class="col-12 pb-3" />
@@ -58,8 +58,8 @@ X,y = f.load_data()
         </div>
         <div class="col-sm-10 col-md-6 col-12 mx-auto">
           <p>
-            Once a dataset is uploaded to Foundry, you can load it with just 2
-            lines of code.
+            Foundry-ML hosts structured, ML-ready data of any size that can be accessed programatically with our Python SDK. Once a dataset is uploaded to Foundry-ML, you can load it with just 2
+            lines of code. The data is loaded into a DataFrame and ready for analysis!
           </p>
           <a class="text-decoration-none"
             href="https://colab.research.google.com/github/MLMI2-CSSI/foundry/blob/main/examples/dendrite-segmentation/dendrite_segmentation.ipynb"
@@ -80,7 +80,9 @@ X,y = f.load_data()
         <v-col class="col-sm-10 col-md-6 col-12 mx-auto">
           <p>
             No need to spend time making sense of someone else's data. We collect information about each dataset to
-            take out any guesswork on your part. Our
+            take out any guesswork on your part.
+            Our schema requires key information for every single dataset we host, making it easy to interpret each one.
+            Our
             publishing process also includes a human review to make sure it meets our
             data standards.
           </p>
@@ -167,7 +169,7 @@ X,y = f.load_data()
                 class="px-6 my-5" /></a>
             <a href="https://materialsdatafacility.org/" target="blank"><img alt="logo" src="../assets/logo_MDF.png"
                 class="px-6  my-5" /></a>
-            
+
           </v-sheet>
 
         </div>
