@@ -175,7 +175,7 @@ res = f.load_data()
             </div>
             <div class="mx-auto col-md-10 col-11 mb-10">
                 
-                <v-simple-table>
+                <v-simple-table v-if="dataset.data_preview[i]">
                     <thead>
                         <tr>
                             <th class="text-left" v-for="col in dataset.data_preview[i][0]"> 
@@ -252,11 +252,11 @@ export default {
             // don't grab last line (possibly partial line)
             dataByLines = dataByLines.map(doc => doc.slice(0,(doc.length -1)))
             const fileTypes = urls.map(url => url.split(".").pop()) 
-            let data_preview = []
+            let data_preview = new Array(fileTypes.length)
             dataByLines.map((doc,i) => {
                 switch (fileTypes[i]) {
                     case "csv":
-                        data_preview = data_preview.concat([doc.map(line => line.split(","))])
+                        data_preview[i] = doc.map(line => line.split(","))
                 }
             })   
 
