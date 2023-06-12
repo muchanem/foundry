@@ -166,6 +166,33 @@ res = f.load_data()
                 
             </div>
         </v-card>
+        <v-card v-for="(item, i) in dataset.foundry.splits" :key="item.label">
+            <div class="indigo lighten-2 pa-6">
+                <h1 class="white--text font-weight-medium">{{ item.label }}</h1>
+                <p class="subtitle-1 white--text font-weight-medium">
+                    <span>{{ item.path }}</span>
+                </p>
+            </div>
+            <div class="mx-auto col-md-10 col-11 mb-10">
+                
+                <v-simple-table>
+                    <thead>
+                        <tr>
+                            <th class="text-left" v-for="col in dataset.data_preview[i][0]"> 
+                                {{ col }} 
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="row in dataset.data_preview[i].slice(1)">
+                            <th class="text-left" v-for="col in row">
+                                {{ col }}
+                            </th>
+                        </tr>
+                    </tbody>
+                </v-simple-table> 
+            </div>
+        </v-card>
     </v-container>
 </template>
 
@@ -185,7 +212,6 @@ export default {
         VueCodeHighlight
     },
     mounted() {
-        var self = this;
 
 
         console.log(this.$route)
@@ -201,31 +227,58 @@ export default {
             "limit": 1,
             "advanced": true,
         }
+        const headers = {
+            headers : {
+                "Range": "bytes=0-1000"
+            }
+        }
 
         // Perform the POST request, and load the information into the Vue object
-        axios
-            .post(ep, query)
-            .then(function (res) {
-                console.log(res)
+        const sendRequests = async () => {
 
-                var creators = res.data.gmeta[0].entries[0].content.dc.creators
-                var authors = []
+            const getDataset = await axios.post(ep, query)
+            const res = await getDataset
+            console.log(res)
 
-                for (let i = 0; i < creators.length; i++) {
-                    authors.push(creators[i].creatorName)
+            let authors = res.data.gmeta[0].entries[0].content.dc.creators.map(creator => creator.creatorName)
+
+            const urlBase = "https://data.materialsdatafacility.org/foundry/" + res.data.gmeta[0].subject + "/"
+            let urls = res.data.gmeta[0].entries[0].content.projects.foundry.splits.map(x => urlBase + x.path)
+
+            const getPreview = await axios.all(urls.map(url => axios.get(url, headers)))
+            const data = await getPreview
+            let dataByLines = data.map(doc => doc.data.split("\n"))
+
+            // don't grab last line (possibly partial line)
+            dataByLines = dataByLines.map(doc => doc.slice(0,(doc.length -1)))
+            const fileTypes = urls.map(url => url.split(".").pop()) 
+            let data_preview = []
+            dataByLines.map((doc,i) => {
+                switch (fileTypes[i]) {
+                    case "csv":
+                        data_preview = data_preview.concat([doc.map(line => line.split(","))])
                 }
+            })   
 
-                // TODO, add more data into the view object for display
-                self.dataset = {
-                    title: res.data.gmeta[0].entries[0].content.dc.titles[0].title,
-                    authors: authors,
-                    dc: res.data.gmeta[0].entries[0].content.dc,
-                    foundry: res.data.gmeta[0].entries[0].content.projects.foundry,
-                    to: "/datasets/" + res.data.gmeta[0].entries[0].content.mdf.source_id,
-                    data_info: res.data.gmeta[0].entries[0].content.data
-                }
-                console.log(self.dataset)
-            })
+            // TODO, add more data into the view object for display
+            this.dataset = {
+                title: res.data.gmeta[0].entries[0].content.dc.titles[0].title,
+                authors: authors,
+                dc: res.data.gmeta[0].entries[0].content.dc,
+                foundry: res.data.gmeta[0].entries[0].content.projects.foundry,
+                to: "/datasets/" + res.data.gmeta[0].entries[0].content.mdf.source_id,
+                data_info: res.data.gmeta[0].entries[0].content.data,
+                data_preview: data_preview
+            }
+
+        }
+        sendRequests()
+               
+
+        
+
+ 
+
     },
     data: () => ({
         drawer: null,
